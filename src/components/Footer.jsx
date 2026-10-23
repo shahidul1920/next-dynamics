@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import LogoIcon from "./LogoIcon";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { Mail, ArrowUp } from "lucide-react";
 
@@ -19,16 +19,11 @@ export default function Footer() {
           {/* Brand info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-9 h-9">
-                <Image
-                  src="/logo.svg"
-                  alt="Next Dynamics Logo"
-                  fill
-                  className="object-contain"
-                />
+              <div className="w-8 h-8 flex items-center justify-center">
+                <LogoIcon className="w-8 h-8 text-white" />
               </div>
               <span className="font-bold text-lg tracking-wider text-white">
-                NEXT<span className="text-electric-cyan">DYNAMICS</span>
+                NEXTDYNAMICS
               </span>
             </div>
 

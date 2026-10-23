@@ -121,6 +121,15 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+@media (max-width: 640px) {
+  .section-rail {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
 /* ── Delicate Link Signals ── */
 
 .link-signal {

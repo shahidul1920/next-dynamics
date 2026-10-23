@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import LogoIcon from "./LogoIcon";
 import { SITE } from "@/lib/constants";
 import { ArrowUp, Sparkles, Mail, Clock, Globe } from "lucide-react";
 
@@ -87,7 +88,7 @@ export default function EditorialFooter() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* 2. Interactive 3D Stage Callout */}
-        <div className="rounded-3xl bg-surface/40 border border-white/[0.08] p-8 sm:p-14 mb-24 relative overflow-hidden backdrop-blur-xl">
+        <div className="rounded-3xl bg-surface/40 border border-white/[0.08] p-6 sm:p-10 lg:p-14 mb-20 sm:mb-24 relative overflow-hidden backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left copy */}
             <div className="lg:col-span-7 space-y-4">
@@ -108,7 +109,7 @@ export default function EditorialFooter() {
               <div className="pt-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-paper text-midnight font-mono text-xs uppercase tracking-widest font-semibold hover:bg-electric-cyan transition-colors"
+                  className="inline-flex items-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-paper text-midnight font-mono text-xs uppercase tracking-widest font-semibold hover:bg-electric-cyan transition-colors"
                 >
                   <span>Initiate Partnership</span>
                   <span className="link-signal" aria-hidden="true">
@@ -133,7 +134,7 @@ export default function EditorialFooter() {
         </div>
 
         {/* 3. Global Time Zones & Studio Coordinates */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-y border-white/[0.06] mb-20 text-xs font-mono">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-6 sm:py-8 border-y border-white/[0.06] mb-16 sm:mb-20 text-xs font-mono">
           <div className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
             <span className="text-paper-muted">San Francisco (PST)</span>
             <span className="text-paper font-semibold">{times.sf}</span>
@@ -149,14 +150,14 @@ export default function EditorialFooter() {
         </div>
 
         {/* 4. Directory Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 mb-16 sm:mb-20">
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-7 h-7">
-                <Image src="/logo.svg" alt="ND" fill className="object-contain" />
+              <div className="w-7 h-7 flex items-center justify-center">
+                <LogoIcon className="w-7 h-7 text-white" />
               </div>
-              <span className="font-bold tracking-wider text-sm text-paper">
-                NEXT<span className="text-electric-cyan">DYNAMICS</span>
+              <span className="font-bold tracking-wider text-sm text-white">
+                NEXTDYNAMICS
               </span>
             </div>
             <p className="text-xs text-paper-muted font-light leading-relaxed max-w-sm">
@@ -198,14 +199,14 @@ export default function EditorialFooter() {
         </div>
 
         {/* 5. Massive Architectural Monogram Watermark */}
-        <div className="relative py-8 flex justify-center opacity-[0.05] select-none pointer-events-none">
-          <div className="text-7xl sm:text-9xl md:text-[14rem] font-display font-black tracking-tighter text-paper uppercase leading-none">
+        <div className="relative py-8 flex justify-center opacity-[0.05] select-none pointer-events-none overflow-hidden">
+          <div className="text-5xl sm:text-8xl md:text-[11rem] lg:text-[14rem] font-display font-black tracking-tighter text-paper uppercase leading-none whitespace-nowrap">
             NEXT DYNAMICS
           </div>
         </div>
 
         {/* 6. Bottom Signature Bar */}
-        <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-paper-muted">
+        <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-paper-muted text-center sm:text-left">
           <div>
             © 2026 Next Dynamics Studio. All rights reserved.
           </div>

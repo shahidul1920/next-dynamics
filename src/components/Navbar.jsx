@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import LogoIcon from "./LogoIcon";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
 
@@ -19,25 +19,20 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 lg:px-12 ${
         scrolled
           ? "bg-midnight/80 backdrop-blur-md border-b border-white/[0.06] py-3.5"
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
         {/* Brand identity */}
         <a href="#top" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8">
-            <Image
-              src="/logo.svg"
-              alt="Next Dynamics"
-              fill
-              className="object-contain transition-transform duration-300 group-hover:scale-105"
-            />
+          <div className="w-8 h-8 flex items-center justify-center">
+            <LogoIcon className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-105" />
           </div>
-          <span className="font-bold tracking-wider text-sm text-paper">
-            NEXT<span className="text-electric-cyan">DYNAMICS</span>
+          <span className="font-bold tracking-wider text-sm text-white">
+            NEXTDYNAMICS
           </span>
         </a>
 

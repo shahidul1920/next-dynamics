@@ -140,17 +140,17 @@ export default function ThePractice() {
                 {/* Header Toggle */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                  className="w-full py-7 px-8 sm:px-10 flex items-center justify-between text-left"
+                  className="w-full py-5 sm:py-7 px-5 sm:px-10 flex items-center justify-between text-left"
                 >
-                  <div className="flex items-center gap-6 sm:gap-10">
+                  <div className="flex items-center gap-4 sm:gap-10">
                     <span className="font-mono text-sm sm:text-base text-paper-muted">
                       {cap.number}
                     </span>
-                    <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-paper tracking-tight">
+                    <span className="text-lg sm:text-2xl lg:text-3xl font-medium text-paper tracking-tight">
                       {cap.title}
                     </span>
                   </div>
-                  <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-paper-muted group-hover:text-paper transition-colors">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center text-paper-muted group-hover:text-paper transition-colors">
                     {isOpen ? (
                       <Minus className="w-4 h-4" />
                     ) : (
@@ -161,7 +161,7 @@ export default function ThePractice() {
 
                 {/* Expanded Details Body */}
                 {isOpen && (
-                  <div className="px-8 sm:px-10 pb-10 pt-2 border-t border-white/[0.06] grid grid-cols-1 lg:grid-cols-12 gap-10">
+                  <div className="px-5 sm:px-10 pb-8 sm:pb-10 pt-2 border-t border-white/[0.06] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
                     {/* Left Narrative */}
                     <div className="lg:col-span-7 space-y-6">
                       <p className="text-base text-paper-muted font-light leading-relaxed">

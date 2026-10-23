@@ -1,18 +1,36 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowRight, CheckCircle2, Mail, Lock } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, Lock, Sparkles, Hand } from "lucide-react";
 import { SITE } from "@/lib/constants";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+const ContactRobot3D = dynamic(() => import("./ContactRobot3D"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const GREETINGS = [
+  { lang: "en", text: "hello." },
+  { lang: "es", text: "hola." },
+  { lang: "fr", text: "salut." },
+  { lang: "it", text: "ciao." },
+  { lang: "ja", text: "こんにちは." },
+  { lang: "de", text: "hallo." },
+  { lang: "uk", text: "привіт." },
+];
 
 export default function ContactStage() {
   const containerRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isWaving, setIsWaving] = useState(false);
+  const [greetingIdx, setGreetingIdx] = useState(0);
 
   const [form, setForm] = useState({
     name: "",
@@ -21,6 +39,14 @@ export default function ContactStage() {
     budget: "$15,000 – $30,000",
     message: "",
   });
+
+  // Cycle multilingual greeting every 3.2s
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setGreetingIdx((prev) => (prev + 1) % GREETINGS.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
 
   useGSAP(
     () => {
@@ -42,6 +68,11 @@ export default function ContactStage() {
     },
     { scope: containerRef }
   );
+
+  const triggerGreet = () => {
+    setIsWaving(true);
+    setGreetingIdx((prev) => (prev + 1) % GREETINGS.length);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,9 +96,9 @@ export default function ContactStage() {
           <span>START A CONVERSATION</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-          {/* Left Column */}
-          <div className="contact-header lg:col-span-5 flex flex-col justify-between">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Heading, Sentinel 3D Character, and Direct Signal */}
+          <div className="contact-header lg:col-span-5 flex flex-col justify-between space-y-10">
             <div>
               <h2 className="text-4xl sm:text-6xl text-paper font-medium tracking-tight mb-6 leading-[1.08]">
                 Your next platform{" "}
@@ -76,11 +107,11 @@ export default function ContactStage() {
                 </em>
               </h2>
               <p className="text-base sm:text-lg text-paper-muted font-light leading-relaxed mb-8">
-                A digital experience, a high-volume supply chain engine, a headless
-                flagship, or an applied AI workflow. Tell us what you want to build.
+                A brand experience, a 1688 supply chain engine, a headless flagship,
+                or an applied AI workflow. Tell us what you want to build.
               </p>
 
-              <div className="space-y-4 mb-10">
+              <div className="space-y-4 mb-6">
                 <a
                   href={`mailto:${SITE.email}`}
                   className="inline-flex items-center gap-3 text-lg text-paper hover:text-electric-cyan transition-colors"
@@ -103,14 +134,45 @@ export default function ContactStage() {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-white/[0.06] text-xs font-mono text-paper-muted">
-              <span>Next Dynamics Studio · Working with teams worldwide</span>
+            {/* ── Apricode Hallmark: Interactive 3D Robot Character Stage ── */}
+            <div className="rounded-2xl bg-surface/50 border border-white/[0.08] p-6 relative overflow-hidden backdrop-blur-md">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-2xl sm:text-3xl font-serif italic text-paper tracking-tight">
+                  {GREETINGS[greetingIdx].text}
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-paper-muted/60">
+                  HUMAN IDEAS. ROBOT ENERGY.
+                </span>
+              </div>
+
+              {/* 3D Sentinel Head Canvas */}
+              <div className="cursor-pointer" onClick={triggerGreet}>
+                <ContactRobot3D
+                  isWaving={isWaving}
+                  onWaveEnd={() => setIsWaving(false)}
+                />
+              </div>
+
+              {/* Interactive Controls */}
+              <div className="flex items-center justify-between pt-2 border-t border-white/[0.06] text-xs font-mono">
+                <button
+                  type="button"
+                  onClick={triggerGreet}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-electric-cyan hover:text-midnight text-paper transition-all"
+                >
+                  <Hand className="w-3.5 h-3.5" />
+                  <span>Say hello</span>
+                </button>
+                <span className="text-[11px] text-paper-muted">
+                  Interactive cursor tracking
+                </span>
+              </div>
             </div>
           </div>
 
           {/* Right Column: Intake Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-surface border border-white/[0.08] p-8 sm:p-12 shadow-2xl">
+            <div className="rounded-2xl bg-surface border border-white/[0.08] p-6 sm:p-10 lg:p-12 shadow-2xl">
               {submitted ? (
                 <div className="py-16 text-center space-y-4">
                   <div className="w-14 h-14 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan flex items-center justify-center mx-auto mb-6">

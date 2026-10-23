@@ -143,7 +143,7 @@ export default function SelectedWork() {
             >
               {/* Top Media Presentation Mockup */}
               <div
-                className={`relative w-full ${project.previewAspect} bg-gradient-to-br ${project.accentGradient} p-8 sm:p-12 flex flex-col justify-between overflow-hidden border-b border-white/[0.06]`}
+                className={`relative w-full ${project.previewAspect} bg-gradient-to-br ${project.accentGradient} p-6 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden border-b border-white/[0.06]`}
               >
                 {/* Background grid */}
                 <div className="absolute inset-0 blueprint-grid-faint opacity-50 pointer-events-none" />
@@ -158,10 +158,10 @@ export default function SelectedWork() {
 
                 {/* Center Graphic Frame */}
                 <div className="relative z-10 my-auto py-6 flex flex-col items-center justify-center text-center">
-                  <div className="text-4xl sm:text-6xl font-display font-bold text-white/90 group-hover:text-white transition-colors duration-300 tracking-tight">
+                  <div className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-white/90 group-hover:text-white transition-colors duration-300 tracking-tight">
                     {project.title}
                   </div>
-                  <div className="font-serif italic text-lg sm:text-2xl text-slate-300 mt-2 font-light">
+                  <div className="font-serif italic text-base sm:text-2xl text-slate-300 mt-2 font-light">
                     {project.italicSubtitle}
                   </div>
                 </div>
@@ -179,7 +179,7 @@ export default function SelectedWork() {
               </div>
 
               {/* Lower Details Block */}
-              <div className="p-8 sm:p-10">
+              <div className="p-6 sm:p-8 lg:p-10">
                 <p className="text-sm sm:text-base text-paper-muted font-light leading-relaxed mb-6">
                   {project.description}
                 </p>

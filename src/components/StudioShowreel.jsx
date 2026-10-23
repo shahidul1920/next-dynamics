@@ -91,7 +91,7 @@ export default function StudioShowreel() {
 
             {/* Bottom Telemetry Bar */}
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/[0.08] text-xs font-mono text-paper-muted">
-              <div className="flex items-center gap-6">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-6">
                 <span>01 Tesla WebGL</span>
                 <span className="text-white/20">/</span>
                 <span>02 Apex 1688 API</span>

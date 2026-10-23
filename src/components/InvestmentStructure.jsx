@@ -172,13 +172,13 @@ export default function InvestmentStructure() {
         </div>
 
         {/* Protection Clause Callout Banner */}
-        <div className="rounded-2xl bg-surface/30 border border-white/[0.08] p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="rounded-2xl bg-surface/30 border border-white/[0.08] p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-gold-blueprint uppercase tracking-wider mb-2">
               <ShieldCheck className="w-4 h-4" />
               Operational Integrity SLA
             </div>
-            <h4 className="text-xl font-medium text-paper mb-2">
+            <h4 className="text-lg sm:text-xl font-medium text-paper mb-2">
               The 14-Day Delivery Guarantee
             </h4>
             <p className="text-xs sm:text-sm text-paper-muted font-light leading-relaxed">
@@ -188,7 +188,7 @@ export default function InvestmentStructure() {
               capacity and mutual operational accountability.
             </p>
           </div>
-          <div className="flex-shrink-0 font-mono text-xs text-paper-muted border-l border-white/10 pl-6">
+          <div className="flex-shrink-0 font-mono text-xs text-paper-muted border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6 w-full md:w-auto">
             <span className="block text-paper text-xl font-medium">100%</span>
             <span>Staging Release Accuracy</span>
           </div>
