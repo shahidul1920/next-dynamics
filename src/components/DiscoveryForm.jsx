@@ -68,15 +68,27 @@ export default function DiscoveryForm() {
     { scope: containerRef }
   );
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to submit form.");
+      }
       setIsSubmitted(true);
-    }, 1200);
+    } catch (err) {
+      console.error("Discovery submission error:", err);
+      alert(err.message || "Failed to submit inquiry.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

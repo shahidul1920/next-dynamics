@@ -29,6 +29,7 @@ export default function ContactStage() {
   const containerRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
   const [isWaving, setIsWaving] = useState(false);
   const [greetingIdx, setGreetingIdx] = useState(0);
 
@@ -74,13 +75,37 @@ export default function ContactStage() {
     setGreetingIdx((prev) => (prev + 1) % GREETINGS.length);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to transmit message.");
+      }
+
       setSubmitted(true);
-    }, 1000);
+      setForm({
+        name: "",
+        email: "",
+        scope: "Creative Web Experience & GSAP",
+        budget: "$15,000 – $30,000",
+        message: "",
+      });
+    } catch (err) {
+      console.error("Submission failed:", err);
+      setError(err.message || "Failed to transmit inquiry. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -187,7 +212,10 @@ export default function ContactStage() {
                     discovery session.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setError("");
+                    }}
                     className="mt-6 px-6 py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-paper-muted hover:text-paper"
                   >
                     Submit Another Inquiry
@@ -195,6 +223,12 @@ export default function ContactStage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-300 font-mono">
+                      {error}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider text-paper-muted mb-2">
