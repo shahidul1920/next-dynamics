@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import HeroJourney from "@/components/HeroJourney";
-import StudioShowreel from "@/components/StudioShowreel";
+import ProofOfCraft from "@/components/ProofOfCraft";
 import SelectedWork from "@/components/SelectedWork";
 import ThePractice from "@/components/ThePractice";
 import InvestmentStructure from "@/components/InvestmentStructure";
@@ -19,7 +19,7 @@ export default function Home() {
       <main className="relative flex flex-col w-full">
         {/* Pinned 320vh 3D Scroll Journey Stage */}
         <HeroJourney />
-        <StudioShowreel />
+        <ProofOfCraft />
         <SelectedWork />
         <ThePractice />
         <InvestmentStructure />

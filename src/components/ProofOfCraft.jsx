@@ -83,32 +83,38 @@ export default function ProofOfCraft() {
     <section
       id="proof"
       ref={containerRef}
-      className="relative py-28 px-6 lg:px-12 bg-midnight overflow-hidden border-t border-white/5"
+      className="relative py-28 px-6 lg:px-12 bg-midnight overflow-hidden border-t border-white/[0.06]"
     >
       {/* Background glow accents */}
       <div className="absolute top-1/4 -right-40 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-40 w-96 h-96 bg-royal-blue/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 -left-40 w-96 h-96 bg-electric-cyan/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Rail */}
+        <div className="section-rail">
+          <span>02 / PROOF OF CRAFT</span>
+          <span>ARCHITECTURAL BENCHMARK</span>
+        </div>
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="proof-heading inline-flex items-center gap-2 px-3 py-1 rounded-full border border-electric-cyan/30 bg-electric-cyan/5 text-electric-cyan text-xs font-mono tracking-widest uppercase mb-4">
             Proof of Craft
           </div>
-          <h2 className="proof-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+          <h2 className="proof-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-paper mb-6">
             Architectural Benchmark:{" "}
-            <span className="gradient-text">Commodity vs. Next Dynamics</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-paper via-white to-electric-cyan">Commodity vs. Next Dynamics</span>
           </h2>
-          <p className="proof-heading text-base sm:text-lg text-slate-400 font-light leading-relaxed">
+          <p className="proof-heading text-base sm:text-lg text-paper-muted font-light leading-relaxed">
             We don’t just claim superior performance; we measure it in milliseconds,
-            frame rates, and bandwidth efficiency. Here is how our architecture
-            obliterates standard page builders.
+            frame rates, and bandwidth efficiency. Here is how bespoke engineering
+            obliterates standard bloated page builders.
           </p>
         </div>
 
         {/* Tab Controls for Mobile / Desktop Switcher */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex p-1.5 rounded-xl bg-deep-navy/70 border border-white/10 backdrop-blur-md">
+          <div className="inline-flex p-1.5 rounded-xl bg-surface border border-white/10 backdrop-blur-md">
             <button
               onClick={() => setActiveTab("generic")}
               className={`px-5 py-2.5 rounded-lg text-xs font-mono transition-all duration-300 flex items-center gap-2 ${
