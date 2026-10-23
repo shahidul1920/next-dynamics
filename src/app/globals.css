@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ── NextDynamics Haute Editorial Design System ── */
+
+:root {
+  /* Core Obsidian & Mineral Palette (sophisticated, non-generic) */
+  --midnight: #0b0f14;
+  --surface: #10171f;
+  --surface-hover: #15202b;
+  --deep-navy: #0e1724;
+  --sapphire: #1a365d;
+  --royal-blue: #2563eb;
+  --electric-cyan: #55d1ff;
+  --mint-glow: #6ee7b7;
+  --gold-blueprint: #d4af37;
+
+  /* Editorial Paper Tones */
+  --paper: #f3f1ec;
+  --paper-muted: #94a3b8;
+  --paper-faint: #64748b;
+  --paper-dark: #070a0e;
+
+  /* Semantic */
+  --background: var(--midnight);
+  --foreground: var(--paper);
+  --text-secondary: var(--paper-muted);
+
+  /* Subtle Spectrum Gradient for Footer Horizon */
+  --spectrum: linear-gradient(
+    90deg,
+    #bdb79b 0%,
+    #c499b9 25%,
+    #aab4cf 50%,
+    #8dbdb0 75%,
+    #a4b889 100%
+  );
+}
+
+@theme inline {
+  --color-midnight: var(--midnight);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-deep-navy: var(--deep-navy);
+  --color-sapphire: var(--sapphire);
+  --color-royal-blue: var(--royal-blue);
+  --color-electric-cyan: var(--electric-cyan);
+  --color-paper: var(--paper);
+  --color-paper-muted: var(--paper-muted);
+  --color-gold-blueprint: var(--gold-blueprint);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+/* ── Base Styles ── */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--midnight);
+  color: var(--paper);
+  font-family: var(--font-sans, "Inter", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  selection-background-color: var(--electric-cyan);
+  selection-color: var(--midnight);
+}
+
+/* ── Typography Roles ── */
+
+.font-serif {
+  font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+}
+
+.font-display {
+  font-family: var(--font-display, "Space Grotesk", sans-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+}
+
+/* Editorial Title with Italic Serif Accent */
+.editorial-title {
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.editorial-title em {
+  font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ── Section Rail (Editorial Header Pattern) ── */
+
+.section-rail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper-muted);
+  padding-bottom: 1.25rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Delicate Link Signals ── */
+
+.link-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+a:hover .link-signal {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.signal-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--electric-cyan);
+}
+
+/* ── Architectural Blueprint Grid (Faint & Classy) ── */
+
+.blueprint-grid-faint {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cline x1='0' y1='0' x2='80' y2='0' stroke='%23ffffff' stroke-width='0.5' opacity='0.03'/%3E%3Cline x1='0' y1='0' x2='0' y2='80' stroke='%23ffffff' stroke-width='0.5' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ── Subtle Glass Effect (Minimal & Restrained) ── */
+
+.paper-card {
+  background: rgba(16, 23, 31, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-card:hover {
+  background: rgba(21, 32, 43, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Footer Horizon Glow Arc ── */
+
+.footer-horizon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.footer-horizon__surface {
+  fill: var(--midnight);
+}
+
+/* ── Custom Scrollbar ── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--midnight);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 209, 255, 0.4);
+}
