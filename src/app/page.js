@@ -6,6 +6,7 @@ import ProofOfCraft from "@/components/ProofOfCraft";
 import SelectedWork from "@/components/SelectedWork";
 import ThePractice from "@/components/ThePractice";
 import InvestmentStructure from "@/components/InvestmentStructure";
+import StudioFAQ from "@/components/StudioFAQ";
 import ContactStage from "@/components/ContactStage";
 import EditorialFooter from "@/components/EditorialFooter";
 
@@ -15,7 +16,7 @@ export default function Home() {
       {/* Editorial Navigation */}
       <Navbar />
 
-      {/* Chapter 01 to 06 Journey */}
+      {/* Chapter 01 to 07 Journey */}
       <main className="relative flex flex-col w-full">
         {/* Pinned 320vh 3D Scroll Journey Stage */}
         <HeroJourney />
@@ -23,6 +24,7 @@ export default function Home() {
         <ProofOfCraft />
         <ThePractice />
         <InvestmentStructure />
+        <StudioFAQ />
         <ContactStage />
       </main>
 

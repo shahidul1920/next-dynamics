@@ -70,6 +70,12 @@ export default function Navbar() {
             Investment
           </a>
           <a
+            href="#faq"
+            className="hover:text-paper transition-colors duration-200"
+          >
+            FAQ
+          </a>
+          <a
             href="#contact"
             className="inline-flex items-center text-paper hover:text-electric-cyan transition-colors duration-200 font-semibold"
           >
@@ -126,11 +132,18 @@ export default function Navbar() {
             04 / Investment
           </a>
           <a
+            href="#faq"
+            onClick={() => setMobileOpen(false)}
+            className="block text-paper-muted hover:text-paper"
+          >
+            05 / FAQ
+          </a>
+          <a
             href="#contact"
             onClick={() => setMobileOpen(false)}
             className="block text-electric-cyan font-bold pt-2 border-t border-white/10"
           >
-            05 / Start a Conversation →
+            06 / Start a Conversation →
           </a>
         </div>
       )}

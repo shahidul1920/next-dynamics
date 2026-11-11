@@ -86,7 +86,7 @@ export default function ContactStage() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Rail */}
         <div className="section-rail">
-          <span>06 / YOUR NEXT CHAPTER</span>
+          <span>07 / YOUR NEXT CHAPTER</span>
           <span>START A CONVERSATION</span>
         </div>
 

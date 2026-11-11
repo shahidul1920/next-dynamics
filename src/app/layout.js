@@ -27,6 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://nextdynamics.tech"),
   title: "Next Dynamics | Creative Frontend & Headless Web Studio",
   description:
     "High-converting SaaS marketing websites, headless WordPress architectures, and luxury brand storefronts. Sub-second speed and fluid GSAP motion engineered with Next.js.",
@@ -41,6 +42,9 @@ export const metadata = {
     "performance engineering",
   ],
   authors: [{ name: "Next Dynamics", url: "https://nextdynamics.tech" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Next Dynamics | Creative Frontend & Headless Web Studio",
     description:
@@ -49,16 +53,32 @@ export const metadata = {
     siteName: "Next Dynamics",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/logo-01.png",
+        width: 1200,
+        height: 630,
+        alt: "Next Dynamics - Creative Frontend & Headless Web Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Next Dynamics | Creative Frontend & Headless Web Studio",
     description:
       "High-converting SaaS marketing websites, headless WordPress architectures, and luxury brand storefronts.",
+    images: ["/logo-01.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [
@@ -74,12 +94,58 @@ export const metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Next Dynamics",
+  url: "https://nextdynamics.tech",
+  logo: "https://nextdynamics.tech/logo-01.png",
+  image: "https://nextdynamics.tech/logo-01.png",
+  description:
+    "Creative frontend engineering studio specializing in high-converting SaaS marketing websites, headless WordPress architectures, and luxury brand e-commerce storefronts.",
+  email: "hello@nextdynamics.tech",
+  telephone: "+8801879539832",
+  priceRange: "$$$",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "BD",
+  },
+  sameAs: ["https://wa.me/8801879539832"],
+  knowsAbout: [
+    "Creative Frontend Engineering",
+    "Headless WordPress Development",
+    "WPGraphQL Next.js Integration",
+    "SaaS Marketing Web Design",
+    "GSAP Web Animations",
+    "E-Commerce Web Design",
+    "Core Web Vitals Optimization",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Next Dynamics",
+  url: "https://nextdynamics.tech",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${cormorant.variable}`}
     >
+      <head>
+        {/* Global Structured Data (Organization & WebSite) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
