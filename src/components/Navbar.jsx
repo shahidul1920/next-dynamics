@@ -44,12 +44,18 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 text-xs font-mono tracking-wider uppercase text-paper-muted">
+        <nav className="hidden lg:flex items-center gap-7 text-xs font-mono tracking-wider uppercase text-paper-muted">
           <a
             href="#work"
             className="hover:text-paper transition-colors duration-200"
           >
             Selected Work
+          </a>
+          <a
+            href="#proof"
+            className="hover:text-paper transition-colors duration-200"
+          >
+            Proof of Craft
           </a>
           <a
             href="#practice"
@@ -99,25 +105,32 @@ export default function Navbar() {
             01 / Selected Work
           </a>
           <a
+            href="#proof"
+            onClick={() => setMobileOpen(false)}
+            className="block text-paper-muted hover:text-paper"
+          >
+            02 / Proof of Craft
+          </a>
+          <a
             href="#practice"
             onClick={() => setMobileOpen(false)}
             className="block text-paper-muted hover:text-paper"
           >
-            02 / The Practice
+            03 / The Practice
           </a>
           <a
             href="#investment"
             onClick={() => setMobileOpen(false)}
             className="block text-paper-muted hover:text-paper"
           >
-            03 / Investment
+            04 / Investment
           </a>
           <a
             href="#contact"
             onClick={() => setMobileOpen(false)}
             className="block text-electric-cyan font-bold pt-2 border-t border-white/10"
           >
-            04 / Start a Conversation →
+            05 / Start a Conversation →
           </a>
         </div>
       )}

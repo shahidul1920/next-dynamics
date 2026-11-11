@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -8,13 +8,14 @@ function Icosphere() {
   const meshRef = useRef();
   const mousePos = useRef({ x: 0, y: 0 });
 
-  // Track mouse for parallax
-  if (typeof window !== "undefined") {
-    window.addEventListener("mousemove", (e) => {
+  useEffect(() => {
+    const handleMove = (e) => {
       mousePos.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
       mousePos.current.y = (e.clientY / window.innerHeight - 0.5) * 2;
-    });
-  }
+    };
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
   useFrame((state, delta) => {
     if (!meshRef.current) return;
@@ -45,29 +46,37 @@ function Icosphere() {
 
 function ParticleField() {
   const pointsRef = useRef();
-
   const particleCount = 600;
 
+  // Pseudo-random deterministic distribution (pure)
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 14;
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 14;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 14;
+      const seed1 = Math.sin(i * 12.9898) * 43758.5453;
+      const seed2 = Math.cos(i * 78.233) * 43758.5453;
+      const seed3 = Math.sin(i * 93.989) * 43758.5453;
+      pos[i * 3] = ((seed1 - Math.floor(seed1)) - 0.5) * 14;
+      pos[i * 3 + 1] = ((seed2 - Math.floor(seed2)) - 0.5) * 14;
+      pos[i * 3 + 2] = ((seed3 - Math.floor(seed3)) - 0.5) * 14;
     }
     return pos;
   }, []);
 
   useFrame((state, delta) => {
     if (!pointsRef.current) return;
-    const posAttr = pointsRef.current.geometry.attributes.position;
+
+    // Slow upward drift
+    const pos = pointsRef.current.geometry.attributes.position;
     for (let i = 0; i < particleCount; i++) {
-      posAttr.array[i * 3 + 1] += delta * 0.05;
-      if (posAttr.array[i * 3 + 1] > 7) {
-        posAttr.array[i * 3 + 1] = -7;
-      }
+      let y = pos.getY(i);
+      y += delta * 0.15;
+      if (y > 7) y = -7;
+      pos.setY(i, y);
     }
-    posAttr.needsUpdate = true;
+    pos.needsUpdate = true;
+
+    // Gentle global rotation
+    pointsRef.current.rotation.y += delta * 0.02;
   });
 
   return (
@@ -75,18 +84,15 @@ function ParticleField() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={particleCount}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
+        size={0.03}
         color="#55d1ff"
-        size={1.5}
         transparent
-        opacity={0.25}
+        opacity={0.4}
         sizeAttenuation
-        depthWrite={false}
       />
     </points>
   );
@@ -94,13 +100,14 @@ function ParticleField() {
 
 export default function HeroCanvas() {
   return (
-    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 6], fov: 60 }}
+        dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true }}
         style={{ background: "transparent" }}
-        dpr={[1, 1.5]}
       >
+        <ambientLight intensity={0.5} />
         <Icosphere />
         <ParticleField />
       </Canvas>

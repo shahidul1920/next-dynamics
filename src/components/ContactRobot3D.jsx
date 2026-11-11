@@ -1,188 +1,218 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 /**
- * 3D Cybernetic Architect Sentinel Head & Hand
- * Tracks mouse cursor in real-time, tilts with spring physics,
- * and waves upon greeting trigger.
+ * Architectural Neural Matrix (High-Velocity Systems Core)
+ * Replaces the cartoonish sentinel robot with an elite, mathematical
+ * 3D architectural node matrix featuring physics-driven mouse tracking,
+ * orbital blueprint rings, and interactive network pulse telemetry.
  */
-function ArchitectSentinel({ isWaving, onWaveEnd, mouseCoord }) {
-  const headGroupRef = useRef();
-  const visorRef = useRef();
-  const leftEarRef = useRef();
-  const rightEarRef = useRef();
-  const armRef = useRef();
+function SystemMatrix({ isPulsing, onPulseEnd, mouseCoord }) {
+  const rootGroupRef = useRef();
+  const coreRef = useRef();
+  const innerRef = useRef();
+  const goldRingRef = useRef();
+  const cyanRingRef = useRef();
+  const satelliteGroupRef = useRef();
 
-  // Wave animation timer
-  const waveTime = useRef(0);
+  // Pulse animation progress
+  const pulseTime = useRef(0);
+
+  // Generate 8 satellite architectural nodes with fixed deterministic positions
+  const satelliteNodes = useMemo(() => {
+    const nodes = [];
+    const phi = (1 + Math.sqrt(5)) / 2; // Golden ratio
+    const coords = [
+      [1, 1, 1],
+      [1, -1, 1],
+      [-1, 1, 1],
+      [-1, -1, 1],
+      [0, 1 / phi, phi],
+      [0, -1 / phi, phi],
+      [phi, 0, 1 / phi],
+      [-phi, 0, 1 / phi],
+    ];
+
+    coords.forEach(([x, y, z], i) => {
+      const vec = new THREE.Vector3(x, y, z).normalize().multiplyScalar(1.55);
+      nodes.push({
+        id: i,
+        pos: [vec.x, vec.y, vec.z],
+        basePos: vec,
+      });
+    });
+    return nodes;
+  }, []);
 
   useFrame((state, delta) => {
-    if (!headGroupRef.current) return;
+    if (!rootGroupRef.current) return;
     const time = state.clock.getElapsedTime();
 
-    // 1. Mouse Head Tracking (Sentinel looks directly at the mouse cursor!)
+    // 1. Mouse Head Tracking with Spring Lerp
     const mx = mouseCoord?.current?.x || 0;
     const my = mouseCoord?.current?.y || 0;
 
-    // Smooth lerp head rotation toward pointer
-    headGroupRef.current.rotation.y = THREE.MathUtils.lerp(
-      headGroupRef.current.rotation.y,
-      mx * 0.75,
-      0.08
+    rootGroupRef.current.rotation.y = THREE.MathUtils.lerp(
+      rootGroupRef.current.rotation.y,
+      mx * 0.85 + Math.sin(time * 0.6) * 0.08,
+      0.06
     );
-    headGroupRef.current.rotation.x = THREE.MathUtils.lerp(
-      headGroupRef.current.rotation.x,
-      -my * 0.55 + Math.sin(time * 1.5) * 0.04,
-      0.08
-    );
-    headGroupRef.current.rotation.z = THREE.MathUtils.lerp(
-      headGroupRef.current.rotation.z,
-      -mx * 0.2,
-      0.08
+    rootGroupRef.current.rotation.x = THREE.MathUtils.lerp(
+      rootGroupRef.current.rotation.x,
+      -my * 0.6 + Math.cos(time * 0.8) * 0.06,
+      0.06
     );
 
-    // Subtle breathing float
-    headGroupRef.current.position.y = Math.sin(time * 2.0) * 0.08;
+    // Subtle levitation
+    rootGroupRef.current.position.y = Math.sin(time * 1.8) * 0.08;
 
-    // 2. Glowing Visor Pulse
-    if (visorRef.current) {
-      const visorPulse = 1.4 + Math.sin(time * 4) * 0.4;
-      visorRef.current.material.emissiveIntensity = visorPulse;
+    // 2. Orbital Blueprint Rings Spin
+    if (goldRingRef.current) {
+      goldRingRef.current.rotation.z += delta * 0.45;
+      goldRingRef.current.rotation.x += delta * 0.2;
+    }
+    if (cyanRingRef.current) {
+      cyanRingRef.current.rotation.y -= delta * 0.55;
+      cyanRingRef.current.rotation.z += delta * 0.15;
     }
 
-    // 3. Ear Pods rotation
-    if (leftEarRef.current) leftEarRef.current.rotation.z += delta * 0.5;
-    if (rightEarRef.current) rightEarRef.current.rotation.z -= delta * 0.5;
+    // 3. Core Slow Torsion
+    if (coreRef.current) {
+      coreRef.current.rotation.y += delta * 0.35;
+      coreRef.current.rotation.x -= delta * 0.2;
+    }
+    if (innerRef.current) {
+      innerRef.current.rotation.y -= delta * 0.6;
+      const pulse = 1.0 + Math.sin(time * 3.5) * 0.12;
+      innerRef.current.scale.setScalar(pulse);
+    }
 
-    // 4. Robotic Hand Wave Interaction
-    if (armRef.current) {
-      if (isWaving) {
-        waveTime.current += delta * 6;
-        // Waving motion
-        armRef.current.position.y = THREE.MathUtils.lerp(armRef.current.position.y, 0.2, 0.15);
-        armRef.current.rotation.z = Math.sin(waveTime.current) * 0.45 + 0.3;
-        armRef.current.rotation.x = -0.4;
+    // 4. Satellite Nodes Float & Breathing
+    if (satelliteGroupRef.current) {
+      satelliteGroupRef.current.rotation.y += delta * 0.25;
+      satelliteGroupRef.current.rotation.x += delta * 0.12;
+    }
 
-        if (waveTime.current > Math.PI * 5) {
-          waveTime.current = 0;
-          onWaveEnd?.();
-        }
-      } else {
-        // Rest position (hidden slightly below)
-        armRef.current.position.y = THREE.MathUtils.lerp(armRef.current.position.y, -1.8, 0.1);
-        armRef.current.rotation.z = THREE.MathUtils.lerp(armRef.current.rotation.z, 0, 0.1);
+    // 5. Interactive Network Pulse Transmission
+    if (isPulsing) {
+      pulseTime.current += delta * 4.5;
+      const wave = Math.sin(pulseTime.current);
+
+      if (coreRef.current) {
+        coreRef.current.scale.setScalar(1.0 + Math.max(0, wave * 0.25));
+      }
+      if (goldRingRef.current) {
+        goldRingRef.current.scale.setScalar(1.0 + Math.max(0, wave * 0.3));
+      }
+
+      if (pulseTime.current >= Math.PI * 2) {
+        pulseTime.current = 0;
+        if (coreRef.current) coreRef.current.scale.setScalar(1.0);
+        if (goldRingRef.current) goldRingRef.current.scale.setScalar(1.0);
+        onPulseEnd?.();
       }
     }
   });
 
   return (
-    <group position={[0, -0.2, 0]}>
-      {/* ── Head Assembly ── */}
-      <group ref={headGroupRef}>
-        {/* Sleek Obsidian Helmet Dome */}
-        <mesh position={[0, 0, 0]} castShadow>
-          <sphereGeometry args={[1.05, 32, 24]} />
-          <meshPhysicalMaterial
-            color="#080e18"
-            emissive="#1e3a8a"
-            emissiveIntensity={0.25}
-            roughness={0.1}
-            metalness={0.92}
-            clearcoat={1.0}
-            clearcoatRoughness={0.06}
-          />
-        </mesh>
+    <group ref={rootGroupRef} position={[0, 0, 0]}>
+      {/* ── 1. Central Chiseled Obsidian Gem Core ── */}
+      <mesh ref={coreRef} scale={1.1} castShadow>
+        <icosahedronGeometry args={[1, 0]} />
+        <meshPhysicalMaterial
+          color="#080e18"
+          emissive="#1e3a8a"
+          emissiveIntensity={0.65}
+          roughness={0.12}
+          metalness={0.92}
+          clearcoat={1.0}
+          clearcoatRoughness={0.08}
+          reflectivity={0.95}
+        />
+      </mesh>
 
-        {/* Angular Jaw / Chin Chiseled Guard */}
-        <mesh position={[0, -0.65, 0.45]} rotation={[0.4, 0, 0]}>
-          <boxGeometry args={[0.9, 0.55, 0.7]} />
-          <meshStandardMaterial
-            color="#0f1b2d"
-            roughness={0.18}
-            metalness={0.88}
-          />
-        </mesh>
+      {/* ── 2. Inner Radiant Crystalline Wireframe ── */}
+      <mesh ref={innerRef} scale={0.72}>
+        <octahedronGeometry args={[0.7, 0]} />
+        <meshStandardMaterial
+          color="#55d1ff"
+          emissive="#55d1ff"
+          emissiveIntensity={1.8}
+          wireframe
+        />
+      </mesh>
 
-        {/* Luminous Electric Cyan Visor (The Sentinel's Eyes) */}
-        <mesh ref={visorRef} position={[0, 0.1, 0.88]}>
-          <boxGeometry args={[1.2, 0.26, 0.35]} />
-          <meshStandardMaterial
-            color="#55d1ff"
-            emissive="#55d1ff"
-            emissiveIntensity={1.8}
-            roughness={0.1}
-            metalness={0.5}
-          />
-        </mesh>
+      {/* ── 3. Precision Gold Blueprint Meridian Ring ── */}
+      <mesh ref={goldRingRef} scale={1.75}>
+        <torusGeometry args={[1, 0.018, 16, 96]} />
+        <meshStandardMaterial
+          color="#d4af37"
+          emissive="#d4af37"
+          emissiveIntensity={0.65}
+          roughness={0.2}
+          metalness={0.95}
+        />
+      </mesh>
 
-        {/* Left Articulated Ear Pod */}
-        <mesh ref={leftEarRef} position={[-1.15, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
-          <cylinderGeometry args={[0.24, 0.24, 0.2, 16]} />
-          <meshStandardMaterial
-            color="#d4af37"
-            emissive="#d4af37"
-            emissiveIntensity={0.5}
-            metalness={0.95}
-          />
-        </mesh>
+      {/* ── 4. Precision Cyan Orbital Ring ── */}
+      <mesh ref={cyanRingRef} scale={2.05} rotation={[Math.PI / 3, 0, 0]}>
+        <torusGeometry args={[1, 0.012, 16, 96]} />
+        <meshStandardMaterial
+          color="#55d1ff"
+          emissive="#55d1ff"
+          emissiveIntensity={0.8}
+          roughness={0.25}
+          metalness={0.85}
+        />
+      </mesh>
 
-        {/* Right Articulated Ear Pod */}
-        <mesh ref={rightEarRef} position={[1.15, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
-          <cylinderGeometry args={[0.24, 0.24, 0.2, 16]} />
-          <meshStandardMaterial
-            color="#d4af37"
-            emissive="#d4af37"
-            emissiveIntensity={0.5}
-            metalness={0.95}
-          />
-        </mesh>
-
-        {/* Overhead Halo Sensor Ring */}
-        <mesh position={[0, 1.15, -0.1]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[0.4, 0.02, 16, 48]} />
-          <meshStandardMaterial
-            color="#55d1ff"
-            emissive="#55d1ff"
-            emissiveIntensity={0.8}
-          />
-        </mesh>
-      </group>
-
-      {/* ── Articulated Waving Arm / Hand ── */}
-      <group ref={armRef} position={[1.35, -1.8, 0.6]}>
-        {/* Forearm */}
-        <mesh position={[0, 0.6, 0]}>
-          <cylinderGeometry args={[0.1, 0.12, 1.1, 16]} />
-          <meshPhysicalMaterial
-            color="#0f1b2d"
-            roughness={0.15}
-            metalness={0.9}
-            clearcoat={1.0}
-          />
-        </mesh>
-
-        {/* Palm & Metallic Fingers */}
-        <mesh position={[0, 1.25, 0]}>
-          <boxGeometry args={[0.3, 0.35, 0.1]} />
-          <meshStandardMaterial
-            color="#55d1ff"
-            emissive="#55d1ff"
-            emissiveIntensity={0.4}
-            metalness={0.9}
-          />
-        </mesh>
+      {/* ── 5. Orbiting Architectural Satellite Nodes ── */}
+      <group ref={satelliteGroupRef}>
+        {satelliteNodes.map((node) => (
+          <group key={node.id} position={node.pos}>
+            <mesh scale={0.11}>
+              <octahedronGeometry args={[1, 0]} />
+              <meshStandardMaterial
+                color="#f3f1ec"
+                emissive="#d4af37"
+                emissiveIntensity={0.9}
+                roughness={0.15}
+                metalness={0.9}
+              />
+            </mesh>
+            {/* Fine beacon glow halo */}
+            <mesh scale={0.18}>
+              <sphereGeometry args={[1, 12, 12]} />
+              <meshBasicMaterial
+                color="#55d1ff"
+                transparent
+                opacity={0.25}
+                wireframe
+              />
+            </mesh>
+          </group>
+        ))}
       </group>
     </group>
   );
 }
 
-export default function ContactRobot3D({ isWaving = false, onWaveEnd }) {
+export default function ContactRobot3D({
+  isWaving = false,
+  onWaveEnd,
+  isPulsing,
+  onPulseEnd,
+}) {
   const containerRef = useRef(null);
   const mouseCoord = useRef({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+
+  // Fallback support for both prop names
+  const activePulse = isPulsing ?? isWaving;
+  const handlePulseEnd = onPulseEnd ?? onWaveEnd;
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -190,7 +220,7 @@ export default function ContactRobot3D({ isWaving = false, onWaveEnd }) {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.05, rootMargin: "200px" }
+      { threshold: 0.05, rootMargin: "150px" }
     );
     observer.observe(containerRef.current);
     return () => observer.disconnect();
@@ -212,7 +242,7 @@ export default function ContactRobot3D({ isWaving = false, onWaveEnd }) {
     >
       <Canvas
         frameloop={isVisible ? "always" : "never"}
-        camera={{ position: [0, 0.1, 4.2], fov: 45 }}
+        camera={{ position: [0, 0, 4.4], fov: 45 }}
         gl={{
           antialias: true,
           alpha: true,
@@ -222,15 +252,15 @@ export default function ContactRobot3D({ isWaving = false, onWaveEnd }) {
         dpr={[1, 1.5]}
         style={{ background: "transparent" }}
       >
-        <ambientLight intensity={0.65} />
+        <ambientLight intensity={0.7} />
         <directionalLight position={[4, 6, 4]} intensity={2.2} color="#ffffff" />
-        <pointLight position={[-3, 2, 3]} intensity={4.0} color="#2563eb" distance={8} />
+        <pointLight position={[-3, 2, 3]} intensity={4.5} color="#2563eb" distance={8} />
         <pointLight position={[3, -2, 3]} intensity={5.0} color="#55d1ff" distance={8} />
-        <pointLight position={[0, 4, -2]} intensity={2.5} color="#d4af37" distance={6} />
+        <pointLight position={[0, 4, -2]} intensity={3.5} color="#d4af37" distance={7} />
 
-        <ArchitectSentinel
-          isWaving={isWaving}
-          onWaveEnd={onWaveEnd}
+        <SystemMatrix
+          isPulsing={activePulse}
+          onPulseEnd={handlePulseEnd}
           mouseCoord={mouseCoord}
         />
       </Canvas>

@@ -205,9 +205,9 @@ export const PROCESS_PHASES = [
 ];
 
 export const NAV_LINKS = [
-  { label: "Capabilities", href: "#capabilities" },
+  { label: "Selected Work", href: "#work" },
   { label: "Proof of Craft", href: "#proof" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Process", href: "#process" },
+  { label: "The Practice", href: "#practice" },
+  { label: "Investment", href: "#investment" },
   { label: "Contact", href: "#contact" },
 ];

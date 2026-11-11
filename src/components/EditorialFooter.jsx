@@ -47,7 +47,7 @@ export default function EditorialFooter() {
   };
 
   return (
-    <footer className="relative bg-[#05080c] pt-32 pb-16 px-6 lg:px-12 overflow-hidden border-t border-white/[0.06]">
+    <footer className="relative bg-midnight pt-32 pb-16 px-6 lg:px-12 overflow-hidden border-t border-white/[0.06]">
       {/* 1. Grand Curved Luminous Spectrum Horizon Arc (Apricode Signature) */}
       <div className="absolute top-0 inset-x-0 h-28 overflow-visible pointer-events-none -translate-y-1/2">
         <svg
@@ -68,7 +68,7 @@ export default function EditorialFooter() {
               <feGaussianBlur stdDeviation="6" />
             </filter>
           </defs>
-          <path d="M0 60Q500 -5 1000 60V82H0Z" fill="#05080c" />
+          <path d="M0 60Q500 -5 1000 60V82H0Z" fill="#0b0f14" />
           <g fill="none" stroke="url(#spectrum-footer-glow)">
             <path
               d="M0 60Q500 -5 1000 60"
@@ -92,9 +92,9 @@ export default function EditorialFooter() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left copy */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-electric-cyan">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Next Dynamics Sculpture</span>
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold-blueprint">
+                <Sparkles className="w-3.5 h-3.5 text-gold-blueprint" />
+                <span>Global Meridian Armillary</span>
               </div>
               <h3 className="text-3xl sm:text-5xl font-medium text-paper tracking-tight leading-tight">
                 Independent thinking.{" "}
@@ -127,7 +127,7 @@ export default function EditorialFooter() {
             <div className="lg:col-span-5 flex flex-col items-center justify-center">
               <Footer3DCanvas />
               <span className="text-[11px] font-mono text-paper-muted/60 uppercase tracking-widest mt-2">
-                Interactive WebGL Polyhedron · Touch & Hover
+                Interactive Celestial Coordinates · Touch & Hover
               </span>
             </div>
           </div>

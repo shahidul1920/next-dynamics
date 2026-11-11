@@ -126,7 +126,7 @@ export default function HeroJourney() {
     <section
       id="top"
       ref={containerRef}
-      className="relative h-[440vh] bg-midnight w-full"
+      className="relative h-[320vh] bg-midnight w-full"
     >
       {/* Pinned Sticky Full-Screen Visual Stage */}
       <div
@@ -146,7 +146,7 @@ export default function HeroJourney() {
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="section-rail">
             <span className="flex items-center gap-2.5 text-paper font-mono text-[11px] sm:text-xs uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-electric-cyan animate-pulse shadow-[0_0_10px_#38bdf8]" />
+              <span className="w-2 h-2 rounded-full bg-gold-blueprint animate-pulse shadow-[0_0_10px_#d4af37]" />
               {activeChapter === 0 && "01 / GARGANTUA ANOMALY"}
               {activeChapter === 1 && "02 / GRAVITATIONAL SLINGSHOT"}
               {activeChapter === 2 && "03 / TESSERACT SINGULARITY"}
@@ -166,7 +166,7 @@ export default function HeroJourney() {
               className="scene-chapter-1 absolute inset-y-0 left-0 flex flex-col justify-center max-w-xl lg:max-w-2xl will-change-transform"
             >
               <p className="chapter-label flex items-center gap-2 mb-3 sm:mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[10px] sm:text-xs">
-                <span className="signal-dot" />
+                <span className="signal-dot-gold" />
                 <span>01 / HIGH ORBIT ANOMALY</span>
               </p>
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
@@ -204,7 +204,7 @@ export default function HeroJourney() {
               style={{ opacity: 0 }}
             >
               <p className="chapter-label flex items-center gap-2 mb-3 sm:mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[10px] sm:text-xs">
-                <span className="signal-dot" />
+                <span className="signal-dot-gold" />
                 <span>02 / ACCRETION DISK SKIM</span>
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
@@ -221,15 +221,15 @@ export default function HeroJourney() {
               </p>
               <div className="flex flex-wrap items-center gap-2 sm:gap-4 lg:gap-6 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-paper">
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                  01 / Accretion Plasma
+                  01 / Sub-Second WebGL
                 </span>
                 <span className="text-paper-muted hidden sm:inline">—</span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                  02 / Gravitational Lensing
+                  02 / Headless Core
                 </span>
                 <span className="text-paper-muted hidden sm:inline">—</span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                  03 / Einstein Photon Ring
+                  03 / Enterprise Sourcing
                 </span>
               </div>
             </div>
@@ -241,7 +241,7 @@ export default function HeroJourney() {
               style={{ opacity: 0 }}
             >
               <p className="chapter-label flex items-center gap-2 mb-3 sm:mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[10px] sm:text-xs">
-                <span className="signal-dot" />
+                <span className="signal-dot-gold" />
                 <span>03 / TESSERACT SINGULARITY</span>
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">

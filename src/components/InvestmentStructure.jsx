@@ -90,8 +90,8 @@ export default function InvestmentStructure() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Rail */}
         <div className="section-rail">
-          <span>05 / ENGAGEMENT</span>
-          <span>PREDICTABLE INVESTMENT</span>
+          <span>05 / INVESTMENT</span>
+          <span>PREDICTABLE VALUE</span>
         </div>
 
         {/* Header */}
@@ -116,13 +116,20 @@ export default function InvestmentStructure() {
               key={tier.name}
               className={`rounded-2xl p-8 sm:p-10 flex flex-col justify-between border transition-all duration-300 ${
                 tier.featured
-                  ? "bg-surface border-white/20 shadow-2xl relative"
+                  ? "bg-surface border-white/20 border-t-2 border-t-gold-blueprint shadow-2xl relative"
                   : "bg-surface/40 border-white/[0.06] hover:border-white/10"
               }`}
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-paper-muted uppercase tracking-wider mb-6">
-                  <span>Tier {tier.tier}</span>
+                  <div className="flex items-center gap-2">
+                    <span>Tier {tier.tier}</span>
+                    {tier.featured && (
+                      <span className="px-2 py-0.5 rounded-full bg-gold-blueprint/10 border border-gold-blueprint/30 text-gold-blueprint text-[10px]">
+                        FLAGSHIP
+                      </span>
+                    )}
+                  </div>
                   <span>{tier.timeline}</span>
                 </div>
 

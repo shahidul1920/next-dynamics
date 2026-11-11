@@ -92,14 +92,14 @@ export default function ProofOfCraft() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Rail */}
         <div className="section-rail">
-          <span>02 / PROOF OF CRAFT</span>
+          <span>03 / PROOF OF CRAFT</span>
           <span>ARCHITECTURAL BENCHMARK</span>
         </div>
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="proof-heading inline-flex items-center gap-2 px-3 py-1 rounded-full border border-electric-cyan/30 bg-electric-cyan/5 text-electric-cyan text-xs font-mono tracking-widest uppercase mb-4">
-            Proof of Craft
+          <div className="badge-gold mb-4 inline-flex">
+            <span>Proof of Craft</span>
           </div>
           <h2 className="proof-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-paper mb-6">
             Architectural Benchmark:{" "}
@@ -308,26 +308,26 @@ export default function ProofOfCraft() {
         {/* 4 Bottom Highlights */}
         <div className="metrics-grid grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="metric-pill p-5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-electric-cyan mb-1">
+            <div className="text-2xl sm:text-3xl font-bold font-mono text-gold-blueprint mb-1">
               99/100
             </div>
-            <div className="text-xs text-slate-400 font-sans">
+            <div className="text-xs text-paper-muted font-sans">
               Google Lighthouse Score
             </div>
           </div>
           <div className="metric-pill p-5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-electric-cyan mb-1">
+            <div className="text-2xl sm:text-3xl font-bold font-mono text-paper mb-1">
               &lt; 350ms
             </div>
-            <div className="text-xs text-slate-400 font-sans">
+            <div className="text-xs text-paper-muted font-sans">
               Time to Interactive (TTI)
             </div>
           </div>
           <div className="metric-pill p-5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-electric-cyan mb-1">
+            <div className="text-2xl sm:text-3xl font-bold font-mono text-paper mb-1">
               60 FPS
             </div>
-            <div className="text-xs text-slate-400 font-sans">
+            <div className="text-xs text-paper-muted font-sans">
               Hardware Motion Sync
             </div>
           </div>
@@ -335,7 +335,7 @@ export default function ProofOfCraft() {
             <div className="text-2xl sm:text-3xl font-bold font-mono text-electric-cyan mb-1">
               0 CLS
             </div>
-            <div className="text-xs text-slate-400 font-sans">
+            <div className="text-xs text-paper-muted font-sans">
               Cumulative Layout Shift
             </div>
           </div>

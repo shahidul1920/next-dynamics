@@ -57,6 +57,11 @@ import {
  */
 function Scroll3DCanvas({ progressRef, isPaused = false }) {
   const canvasRef = useRef(null);
+  const isPausedRef = useRef(isPaused);
+
+  useEffect(() => {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -344,7 +349,7 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
         if (isDisposed) return;
         animationFrameId = requestAnimationFrame(render);
 
-        if (isPaused || !isVisible) return;
+        if (isPausedRef.current || !isVisible) return;
 
         const p = progressRef?.current || 0;
         const mx = mouse.x * 0.35;
@@ -436,7 +441,7 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
         renderer.dispose();
       }
     };
-  }, [progressRef, isPaused]);
+  }, [progressRef]);
 
   return (
     <div className="absolute inset-0 z-0 pointer-events-none">

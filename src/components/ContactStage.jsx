@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowRight, CheckCircle2, Mail, Lock, Sparkles, Hand } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, Lock, Sparkles, Activity } from "lucide-react";
 import { SITE } from "@/lib/constants";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -159,18 +159,18 @@ export default function ContactStage() {
               </div>
             </div>
 
-            {/* ── Apricode Hallmark: Interactive 3D Robot Character Stage ── */}
+            {/* ── Interactive 3D Architectural Node Stage ── */}
             <div className="rounded-2xl bg-surface/50 border border-white/[0.08] p-6 relative overflow-hidden backdrop-blur-md">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-2xl sm:text-3xl font-serif italic text-paper tracking-tight">
                   {GREETINGS[greetingIdx].text}
                 </span>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-paper-muted/60">
-                  HUMAN IDEAS. ROBOT ENERGY.
+                <span className="text-[10px] font-mono uppercase tracking-widest text-gold-blueprint">
+                  LIVE ARCHITECTURE NODE · 60 FPS
                 </span>
               </div>
 
-              {/* 3D Sentinel Head Canvas */}
+              {/* 3D System Matrix Canvas */}
               <div className="cursor-pointer" onClick={triggerGreet}>
                 <ContactRobot3D
                   isWaving={isWaving}
@@ -185,8 +185,8 @@ export default function ContactStage() {
                   onClick={triggerGreet}
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-electric-cyan hover:text-midnight text-paper transition-all"
                 >
-                  <Hand className="w-3.5 h-3.5" />
-                  <span>Say hello</span>
+                  <Activity className="w-3.5 h-3.5 text-electric-cyan" />
+                  <span>Transmit Network Pulse</span>
                 </button>
                 <span className="text-[11px] text-paper-muted">
                   Interactive cursor tracking

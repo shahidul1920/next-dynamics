@@ -19,8 +19,8 @@ export default function Home() {
       <main className="relative flex flex-col w-full">
         {/* Pinned 320vh 3D Scroll Journey Stage */}
         <HeroJourney />
-        <ProofOfCraft />
         <SelectedWork />
+        <ProofOfCraft />
         <ThePractice />
         <InvestmentStructure />
         <ContactStage />
