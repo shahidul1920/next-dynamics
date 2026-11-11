@@ -11,58 +11,58 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const CAPABILITIES = [
   {
     number: "01",
-    title: "Applied AI & Automation",
-    lead: "Put AI to work on defined engineering workflows. We design autonomous assistants, API routers, and document ingestion pipelines designed around your existing data and human-in-the-loop review.",
-    tags: ["Autonomous Workflows", "Vercel AI SDK", "Custom LLM Integrations", "Human-in-the-Loop"],
-    studyLabel: "FROM INPUT TO ACTION",
-    studyCaption: "Connected tools. A human architect in control.",
+    title: "SaaS Marketing & Conversion Flagships",
+    lead: "Turn software visitors into paying users and confident investors. We engineer high-converting marketing sites for SaaS founders who already have a working product, featuring interactive feature tours, animated UI previews, and clear pricing architecture.",
+    tags: ["SaaS Marketing", "Interactive Product Tours", "Next.js 15", "Conversion Architecture"],
+    studyLabel: "FROM VISITOR TO CUSTOMER",
+    studyCaption: "Clear narrative, interactive product demo, seamless signup funnel.",
     details: [
-      "Task-specific autonomous agent architectures",
-      "Streaming RAG with vector semantic databases",
-      "Model-agnostic routing (Claude, OpenAI, Local models)",
-      "Strict data privacy and corporate isolation protocols",
+      "Interactive product feature breakdowns and animated UI demos",
+      "High-converting pricing tiers and interactive comparison tables",
+      "Sub-400ms page delivery with zero cumulative layout shift",
+      "Clean CRM, analytics (GA4), and product waitlist integrations",
     ],
   },
   {
     number: "02",
-    title: "Immersive Digital Experiences",
-    lead: "Build a brand platform people explore and a product they rely on. We unite creative art direction, WebGL interactive 3D, and butter-smooth GSAP motion into one seamless full-stack process.",
-    tags: ["Next.js 15", "Physics GSAP", "Three.js / WebGL", "Sub-second CWV"],
-    studyLabel: "EVERY SCREEN. ONE CONTINUUM.",
-    studyCaption: "Engineered to move people. Built to be used.",
+    title: "Headless WordPress & Decoupled CMS",
+    lead: "Keep the WordPress editor your team already knows, but ditch slow PHP themes and plugin lag. We connect your WordPress backend to an ultra-fast Next.js frontend via WPGraphQL for instant page delivery with zero plugin bloat.",
+    tags: ["Headless WordPress", "WPGraphQL", "Zero Plugin Bloat", "99 Lighthouse"],
+    studyLabel: "FAMILIAR ADMIN. INSTANT FRONTEND.",
+    studyCaption: "Editorial team stays in WordPress; visitors experience sub-second Next.js speed.",
     details: [
-      "Custom WebGL canvas and procedural shaders",
-      "Physics-based kinetic typography and scroll narratives",
-      "Zero layout shifts (0 CLS) and sub-400ms page handoffs",
-      "Flawless responsive architecture across mobile and ultra-wide screens",
+      "Decoupled frontend eliminating slow page builders and bloated plugins",
+      "Keep existing WordPress post editor, categories, and media library",
+      "Instant editorial preview environments and automatic cache invalidation",
+      "Enterprise-grade security separating your WordPress database from public traffic",
     ],
   },
   {
     number: "03",
-    title: "Connected Commerce & 1688 Pipelines",
-    lead: "Make a high-volume storefront work as smoothly as it looks. Sourcing automation, 1688 factory APIs, real-time inventory synchrony, and global checkout connect seamlessly into one unified backend.",
-    tags: ["1688 Sourcing Engine", "Headless Commerce", "Inventory Sync", "Logistics Automation"],
-    studyLabel: "FROM FACTORY TO DOORSTEP",
-    studyCaption: "Complete supply chain visibility, end to end.",
+    title: "Premium Brand Flagships & E-Commerce",
+    lead: "Elevate your brand beyond generic templates. We engineer bespoke digital storefronts and luxury brand flagships with editorial typography, fluid micro-interactions, and frictionless checkout integrations.",
+    tags: ["Custom E-Commerce", "Brand Storytelling", "Shopify Headless", "Fluid Cart"],
+    studyLabel: "PRESTIGE TO PURCHASE",
+    studyCaption: "Elevated digital identity with high-conversion checkout.",
     details: [
-      "Direct 1688 API sourcing pipelines & automated currency conversion",
-      "Custom warehouse and package tracking automation",
-      "Multi-vendor architecture with high-concurrency databases",
-      "Zero-latency checkout integrations",
+      "Bespoke layout design tailored to high-end brand identity",
+      "Custom cart drawer, instant search, and headless checkout flows",
+      "Optimized high-resolution media delivery with progressive loading",
+      "Mobile-first responsive grids tuned for luxury product discovery",
     ],
   },
   {
     number: "04",
-    title: "Headless CMS & Decoupled Architecture",
-    lead: "Editorial independence without template bloat. We pair Headless WordPress (WPGraphQL), Sanity, or Strapi with ultra-fast Next.js frontends, giving marketing teams total control while preserving 99+ Lighthouse performance.",
-    tags: ["Headless WordPress", "WPGraphQL", "Sanity CMS", "Incremental Static Regeneration"],
-    studyLabel: "EDITORIAL SPEED. ZERO BLOAT.",
-    studyCaption: "Clean editorial workflows, sub-second visitor delivery.",
+    title: "Interactive GSAP Motion & 60 FPS Performance",
+    lead: "Engage visitors through intentional, physics-based motion. We craft kinetic typography, scroll-linked storytelling timelines, and interactive visual micro-details running at a consistent 60 frames per second.",
+    tags: ["Physics GSAP", "Kinetic Typography", "60 FPS Motion", "Sub-second CWV"],
+    studyLabel: "BUILT TO BE REMEMBERED",
+    studyCaption: "Fluid motion that guides attention without sacrificing speed.",
     details: [
-      "Decoupled frontend eliminating slow WordPress plugins",
-      "Instant page preview environments for editorial teams",
-      "Structured SEO schema and open graph automation",
-      "Enterprise security isolating database from the public web",
+      "ScrollTrigger timelines with buttery smooth GPU hardware acceleration",
+      "Zero layout shifts (0 CLS) ensuring top search ranking signals",
+      "Lightweight JavaScript bundles that never bottleneck the main thread",
+      "Accessible, responsive motion with prefers-reduced-motion support",
     ],
   },
 ];
@@ -117,8 +117,8 @@ export default function ThePractice() {
           </div>
           <div className="max-w-md text-sm text-paper-muted font-light leading-relaxed">
             <p>
-              From a brand’s first impression to the platform people use every single
-              day. Designed from first principles, engineered by one team.
+              From SaaS marketing flagships to headless WordPress architectures and premium brand storefronts.
+              Engineered with clean code, zero template bloat, and sub-second performance.
             </p>
           </div>
         </div>

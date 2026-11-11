@@ -99,16 +99,15 @@ export default function ProofOfCraft() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="badge-gold mb-4 inline-flex">
-            <span>Proof of Craft</span>
+            <span>Performance Benchmarks</span>
           </div>
           <h2 className="proof-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-paper mb-6">
-            Architectural Benchmark:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-paper via-white to-electric-cyan">Commodity vs. Next Dynamics</span>
+            Performance Comparison:{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-paper via-white to-electric-cyan">Standard Templates vs. Clean Code</span>
           </h2>
           <p className="proof-heading text-base sm:text-lg text-paper-muted font-light leading-relaxed">
-            We don’t just claim superior performance; we measure it in milliseconds,
-            frame rates, and bandwidth efficiency. Here is how bespoke engineering
-            obliterates standard bloated page builders.
+            Real performance numbers: load times, JavaScript bundle sizes, and Core Web Vitals.
+            Here is how custom engineering compares to standard plugin-heavy page builders.
           </p>
         </div>
 
@@ -182,18 +181,17 @@ export default function ProofOfCraft() {
                   <div className="space-y-4 transition-all duration-500">
                     <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan text-[11px] font-mono">
                       <span className="w-2 h-2 rounded-full bg-electric-cyan animate-ping" />
-                      Zero Runtime Bloat · Edge Cached
+                      Zero Plugin Bloat · Edge Cached · Headless Speed
                     </div>
                     <div className="text-2xl font-bold text-white tracking-tight leading-snug">
-                      Engineered for Sub-Second Dominance.
+                      Engineered for Sub-Second Speed.
                     </div>
                     <p className="text-xs text-slate-400 font-light max-w-md leading-relaxed">
-                      Custom WebGL canvas, tree-shaken GSAP 3D motion, and semantic
-                      zero-cost abstractions running at steady 60 frames per second.
+                      Optimized Next.js frontend, lean JavaScript bundles, and smooth 60 FPS motion without plugin bloat or page builder lag.
                     </p>
                     <div className="flex items-center gap-3 pt-2">
                       <div className="px-4 py-2 rounded-lg bg-gradient-to-r from-sapphire to-royal-blue text-white text-xs font-semibold shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                        Architecture Ready
+                        Production Ready
                       </div>
                       <div className="text-xs font-mono text-electric-cyan">
                         TTFB: 18ms
@@ -297,7 +295,7 @@ export default function ProofOfCraft() {
                     {activeTab === "generic" ? "Failed" : "Pass (Green)"}
                   </div>
                   <div className="text-[11px] text-slate-500 mt-1">
-                    {activeTab === "generic" ? "Google penalization" : "Priority SERP ranking"}
+                    {activeTab === "generic" ? "Fails Core Web Vitals" : "Optimal search ranking"}
                   </div>
                 </div>
               </div>

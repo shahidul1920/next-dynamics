@@ -13,85 +13,85 @@ const PROJECTS = [
   {
     index: "01",
     title: "Freebirds Digest",
-    italicSubtitle: "Modern Digital Publication",
+    italicSubtitle: "Digital Publication",
     url: "https://www.freebirdsdigest.com/",
-    category: "Digital Media & Newsroom Engine",
+    category: "Digital Media / Editorial Platform",
     status: "Live Production",
     description:
-      "High-throughput editorial and digital media publication with sub-second page delivery, dynamic article categorization, and custom reader typography.",
+      "Full digital publication built with Next.js and dynamic routing. Optimized for sub-second page loads, clean reader typography, and fast editorial updates.",
     tech: ["Next.js", "Tailwind CSS", "Edge CDN", "Dynamic Routing"],
     accentGradient: "from-blue-950/60 via-midnight to-surface",
-    metric: "99 Lighthouse · Sub-second Paint",
+    metric: "99 Lighthouse / Sub-second Paint",
     featured: true,
   },
   {
     index: "02",
     title: "Redmun Digitech",
-    italicSubtitle: "Growth & Creative Engineering",
+    italicSubtitle: "Agency Platform",
     url: "https://www.redmundigitech.com/",
-    category: "Full-Stack Creative Agency Platform",
+    category: "Digital Agency / Web Platform",
     status: "Live Production",
     description:
-      "Flagship creative digital agency platform built for high conversion, responsive interactive storytelling, and enterprise client onboarding.",
+      "Modern agency platform engineered for fast conversion, interactive storytelling, and client onboarding with zero template bloat.",
     tech: ["React", "Interactive UI", "GSAP Motion", "Tailwind"],
     accentGradient: "from-cyan-950/50 via-midnight to-surface",
-    metric: "60 FPS · 0.3s FCP",
+    metric: "60 FPS / 0.3s FCP",
     featured: false,
   },
   {
     index: "03",
     title: "Central Barge",
-    italicSubtitle: "Enterprise Maritime Infrastructure",
+    italicSubtitle: "Maritime Logistics",
     url: "https://www.centralbarge.com/",
-    category: "Industrial Logistics & Maritime",
+    category: "Industrial Logistics / Web App",
     status: "Live Production",
     description:
-      "Heavy industrial logistics platform delivering real-time fleet visibility, operational asset management, and rapid commercial inquiry routing.",
+      "Industrial logistics platform providing fleet visibility, operational asset management, and rapid commercial inquiry routing.",
     tech: ["Next.js", "Enterprise APIs", "Responsive Grid", "Cloud VPS"],
     accentGradient: "from-amber-950/40 via-midnight to-surface",
-    metric: "100% Uptime · Zero Layout Shift",
+    metric: "100% Uptime / Zero Layout Shift",
     featured: false,
   },
   {
     index: "04",
     title: "Astha Creatives",
-    italicSubtitle: "Brand Identity & Digital Showcase",
+    italicSubtitle: "Design Studio",
     url: "https://www.asthacreatives.com/",
-    category: "Bespoke Creative & Brand Studio",
+    category: "Design Studio / Portfolio",
     status: "Live Production",
     description:
-      "Artisan digital design showcase with bespoke typography, grid geometry, and seamless interactive client presentation workflows.",
-    tech: ["Creative UI", "Typography System", "Tailwind", "Vercel Edge"],
+      "Design portfolio site featuring custom typography systems, grid layouts, and interactive client presentation workflows.",
+    tech: ["React", "Typography System", "Tailwind", "Vercel Edge"],
     accentGradient: "from-purple-950/40 via-midnight to-surface",
-    metric: "Zero Bloat · 98+ Score",
+    metric: "98+ Performance / Lean Code",
     featured: true,
   },
   {
     index: "05",
     title: "Cell Repair Store",
-    italicSubtitle: "Commercial Service Engine",
+    italicSubtitle: "Commercial Service",
     url: "https://www.cellrepairstore.com/",
-    category: "E-Commerce & Service Automation",
+    category: "E-Commerce / Booking Engine",
     status: "Live Production",
     description:
-      "Commercial service booking and device repair catalog platform with automated quoting workflows, local SEO architecture, and instant customer intake.",
+      "Repair service catalog and booking platform with instant quoting workflows, local search architecture, and customer intake.",
     tech: ["Next.js", "Booking Engine", "Local SEO", "High Concurrency"],
     accentGradient: "from-emerald-950/40 via-midnight to-surface",
-    metric: "Fast Checkout · High Conversion",
+    metric: "Fast Checkout / High Conversion",
     featured: false,
   },
   {
     index: "06",
     title: "Redmun",
-    italicSubtitle: "Global Technology Solutions",
+    italicSubtitle: "Technology Hub",
     url: "https://www.redmun.com/",
-    category: "Enterprise Digital Architecture",
+    category: "Corporate Platform / Tech Hub",
     status: "Live Production",
     description:
-      "Global digital architecture and technology hub engineered with clean corporate structure, cloud scalability, and unified brand presence.",
-    tech: ["Enterprise Architecture", "Cloud Scale", "Modern Web", "API Integration"],
+      "Corporate technology platform engineered with modular architecture, cloud scalability, and unified brand infrastructure.",
+    tech: ["React", "Cloud Scale", "Modern Web", "API Integration"],
     accentGradient: "from-slate-900/60 via-midnight to-surface",
-    metric: "Sub-400ms TTFB · Enterprise Grade",
+    metric: "Sub-400ms TTFB / Fast Delivery",
     featured: false,
   },
 ];
@@ -153,17 +153,17 @@ export default function SelectedWork() {
         {/* Header Block */}
         <div className="work-header max-w-3xl mb-16 sm:mb-20">
           <div className="badge-gold mb-4 inline-flex">
-            <span>Verified Production Work</span>
+            <span>Production Portfolio</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl text-paper font-medium tracking-tight mb-6">
-            The thinking{" "}
+            Work we have{" "}
             <em className="font-serif italic font-normal text-slate-300">
-              in practice
+              built and shipped
             </em>
           </h2>
           <p className="text-base sm:text-lg text-paper-muted font-light leading-relaxed">
-            Direct live streams into real production platforms and bespoke digital ecosystems
-            engineered from first principles. Hover to explore or click through to each live domain.
+            Real production websites and platforms running live in the real world.
+            Each one was designed and developed from scratch for fast load times and reliable performance.
           </p>
         </div>
 
@@ -224,13 +224,13 @@ export default function SelectedWork() {
 
               {/* Lower Details Block */}
               <div className="p-6 sm:p-8">
-                <div className="flex items-baseline justify-between gap-4 mb-3">
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-3 mb-3">
                   <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
-                    {project.title}{" "}
-                    <em className="font-serif italic font-normal text-slate-300 text-lg sm:text-xl">
-                      — {project.italicSubtitle}
-                    </em>
+                    {project.title}
                   </h3>
+                  <span className="text-sm sm:text-base font-serif italic text-paper-muted">
+                    / {project.italicSubtitle}
+                  </span>
                 </div>
 
                 <p className="text-sm sm:text-base text-paper-muted font-light leading-relaxed mb-6">

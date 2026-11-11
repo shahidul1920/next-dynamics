@@ -3,14 +3,16 @@
 export const SITE = {
   name: "Next Dynamics",
   domain: "NextDynamics.tech",
-  tagline: "Ultra-Premium Creative Engineering Studio",
+  tagline: "Creative Engineering Studio",
   email: "hello@nextdynamics.tech",
+  whatsapp: "+880 1879-539832",
+  whatsappUrl: "https://wa.me/8801879539832",
   hero: {
-    eyebrow: "CREATIVE ENGINEERING STUDIO",
+    eyebrow: "CREATIVE FRONTEND STUDIO",
     headlineTop: "We Engineer Digital",
-    headlineBottom: "Dominance.",
+    headlineBottom: "Performance.",
     description:
-      "Bespoke web platforms for visionary brands. Sub-second speed. Jaw-dropping motion. Zero commodity tools. Every pixel engineered from first principles.",
+      "High-converting SaaS marketing websites, headless WordPress architectures, and elevated e-commerce frontends. Sub-second speed and fluid GSAP motion engineered from first principles.",
     telemetry: [
       { label: "Core Web Vitals", value: "99" },
       { label: "FPS", value: "60" },
@@ -20,57 +22,57 @@ export const SITE = {
 };
 
 export const ANTI_COMMODITY = {
-  heading: "The Anti-Commodity Standard",
+  heading: "Clean Engineering Standards",
   points: [
-    "Zero page builders. Zero plugin bloat. Zero template lock-in.",
-    "Every pixel engineered from first principles.",
+    "Zero clunky page builders. Zero plugin bloat. Zero template lock-in.",
+    "Keep your familiar WordPress dashboard with a blazing Next.js frontend.",
     "Sub-second load times. 98+ Lighthouse. 60 FPS motion.",
-    "Your digital presence as a strategic weapon, not a checkbox.",
+    "Your digital presence as an engine for real customer conversion.",
   ],
   eliminated: [
-    "WordPress Themes",
-    "Elementor / Divi",
-    "Wix / Squarespace",
-    "Generic Templates",
+    "Elementor & Divi Bloat",
+    "Slow WordPress Themes",
+    "Generic Shopify Templates",
+    "Wix / Squarespace Lock-in",
   ],
 };
 
 export const SPECIALIZATIONS = [
   {
     icon: "Layers",
-    title: "Creative Web Experiences & GSAP Motion",
+    title: "SaaS Marketing Websites & Product Showcases",
     description:
-      "Bespoke Next.js experiences with physics-driven GSAP animations, ScrollTrigger narratives, and WebGL canvas interactions.",
+      "High-converting marketing sites, interactive product tours, and pricing matrices designed to turn visitors into active software users.",
   },
   {
     icon: "Database",
-    title: "Headless CMS & Decoupled Architecture",
+    title: "Headless WordPress & Decoupled CMS",
     description:
-      "Headless WordPress (WPGraphQL), Sanity, or Strapi paired with blazing Next.js frontends — editorial ease, zero bloat.",
+      "Keep your WordPress admin dashboard and editorial workflows, but replace slow PHP themes with a lightning-fast Next.js frontend via WPGraphQL.",
   },
   {
-    icon: "Container",
-    title: "Enterprise Platforms & API Automation",
+    icon: "ShoppingBag",
+    title: "Premium Brand Flagships & E-Commerce",
     description:
-      "Complex custom platforms, 1688 API sourcing pipelines, e-commerce engines, and automated logistics workflows.",
+      "Bespoke digital storefronts, custom Shopify headless frontends, editorial product showcases, and high-conversion checkout flows.",
   },
   {
-    icon: "BrainCircuit",
-    title: "Applied AI & Autonomous Agents",
+    icon: "Sparkles",
+    title: "Creative GSAP Motion & Micro-Interactions",
     description:
-      "Custom LLM integrations, Vercel AI SDK, LangChain, streaming interfaces, and conversational AI assistants.",
+      "Physics-driven animation timelines, kinetic typography, smooth scrolling, and 60 FPS performance without layout shifts.",
   },
   {
     icon: "Gauge",
     title: "Performance Engineering & SEO",
     description:
-      "Sub-second optimization, Lighthouse 98+ scores, Core Web Vitals mastery, GA4, and technical SEO architecture.",
+      "Sub-second page transitions, 99+ Lighthouse scores, edge caching, structured SEO schema, and GA4 conversion tracking.",
   },
   {
     icon: "Shield",
-    title: "Cloud Infrastructure & DevOps",
+    title: "Design Systems & Component Architecture",
     description:
-      "Azure VPS, Vercel Enterprise, Docker containerization, GitHub Actions CI/CD, and Linux-optimized environments.",
+      "Clean React 19 and Tailwind CSS design tokens, reusable UI component libraries, and strict brand consistency across all viewports.",
   },
 ];
 
@@ -93,58 +95,58 @@ export const PROOF_OF_CRAFT = {
 
 export const PRICING_TIERS = [
   {
-    name: "Signature Digital Experience",
+    name: "Signature Platform",
     tier: "Tier 1",
-    price: "$6,000 – $12,000",
+    price: "$6,000 to $12,000",
     priceNum: 6000,
     target:
-      "High-growth startups, luxury brands, and flagship product launches.",
-    timeline: "3–5 weeks",
+      "Modern marketing websites, product launchpads, and high-impact digital presences engineered for conversion and speed.",
+    timeline: "3 to 5 weeks",
     deliverables: [
-      "Bespoke 5–8 page architecture",
-      "Custom GSAP motion narrative & micro-interactions",
-      "Responsive 12-column grid system",
+      "Custom 5 to 8 page marketing architecture",
+      "Interactive product tour & animated feature previews",
+      "High-conversion pricing table & comparison matrix",
+      "Fluid GSAP motion & micro-interactions",
       "Sub-second performance (Lighthouse 95+)",
-      "Headless content setup & SEO optimization",
-      "Analytics configuration (GA4)",
+      "Technical SEO & analytics tracking (GA4)",
     ],
     accent: "sapphire",
     featured: false,
   },
   {
-    name: "Full-Stack Growth Platform",
+    name: "Headless Platform",
     tier: "Tier 2",
-    price: "$15,000 – $30,000",
-    priceNum: 15000,
+    price: "$10,000 to $20,000",
+    priceNum: 10000,
     target:
-      "Scaling digital brands, modern publications, and SaaS companies.",
-    timeline: "6–8 weeks",
+      "Dynamic platforms and headless CMS migrations (Headless WordPress, Sanity) delivering instant page loads with zero plugin bloat.",
+    timeline: "5 to 7 weeks",
     deliverables: [
-      "Complete full-stack Next.js web application",
-      "Headless CMS integration (WPGraphQL/Sanity)",
-      "Dynamic routing & advanced filtering",
-      "Custom authentication & user dashboards",
-      "Third-party API pipelines",
-      "Interactive motion design & enterprise security",
+      "Headless CMS setup via WPGraphQL or Sanity",
+      "Ultra-fast Next.js 15 decoupled frontend",
+      "Familiar admin editing workflows with zero frontend bloat",
+      "Instant editorial preview environments & live draft sync",
+      "Dynamic routing & edge caching architecture",
+      "Automated structured data (Schema) & performance SLA",
     ],
     accent: "gradient",
     featured: true,
   },
   {
-    name: "Enterprise Bespoke Platform",
+    name: "Digital Flagship",
     tier: "Tier 3",
-    price: "$40,000 – $80,000+",
-    priceNum: 40000,
+    price: "$18,000 to $35,000+",
+    priceNum: 18000,
     target:
-      "Large enterprises, global supply chain operators, and multi-sided platforms.",
-    timeline: "10–14+ weeks",
+      "Premium brand presences, custom e-commerce storefronts, and immersive digital flagships built to lead their category.",
+    timeline: "6 to 10 weeks",
     deliverables: [
-      "End-to-end custom platform engineering",
-      "Automated sourcing & inventory APIs (1688 engine)",
-      "Custom warehouse/shipping management",
-      "High-volume database architecture (PostgreSQL/MongoDB)",
-      "Automated CI/CD deployment & dedicated SLA",
-      "Full documentation & team training",
+      "Custom e-commerce frontend & editorial storefront",
+      "Tailored brand typography & visual storytelling layouts",
+      "Fluid cart drawer & friction-free checkout integrations",
+      "Interactive micro-details & 60 FPS GSAP motion",
+      "Multi-currency / regional localization architecture",
+      "Full repository handover & dedicated staging SLA",
     ],
     accent: "cyan",
     featured: false,
@@ -156,13 +158,13 @@ export const RETAINERS = [
     name: "Performance & Evolution Retainer",
     price: "$2,500/month",
     description:
-      "Continuous UI/UX refinements, GSAP motion enhancements, monthly security & performance audits, priority support.",
+      "Continuous UI/UX refinements, GSAP motion enhancements, monthly Core Web Vitals audits, and priority SLA.",
   },
   {
-    name: "Dedicated Full-Stack Engineering Retainer",
+    name: "Dedicated Frontend & Growth Retainer",
     price: "$5,000/month",
     description:
-      "Dedicated bi-weekly sprint capacity, custom feature development, API maintenance, performance monitoring, and architecture advisory.",
+      "Dedicated bi-weekly sprint capacity, custom landing pages, conversion rate optimization, and ongoing architectural improvements.",
   },
 ];
 

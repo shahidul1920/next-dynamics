@@ -26,8 +26,8 @@ export default function DiscoveryForm() {
     email: "",
     company: "",
     projectType: "Creative Web Experience & GSAP",
-    budget: "$15,000 – $30,000",
-    timeline: "4–8 weeks",
+    budget: "",
+    timeline: "4 to 8 weeks",
     brief: "",
   });
 
@@ -271,19 +271,15 @@ export default function DiscoveryForm() {
                       <label className="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
                         Allocated Budget
                       </label>
-                      <select
+                      <input
+                        type="text"
                         value={formData.budget}
                         onChange={(e) =>
                           setFormData({ ...formData, budget: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-deep-navy border border-white/10 text-white text-sm focus:outline-none focus:border-electric-cyan transition-colors"
-                      >
-                        <option>$6,000 – $12,000 (Tier 1)</option>
-                        <option>$15,000 – $30,000 (Tier 2 - Popular)</option>
-                        <option>$40,000 – $80,000+ (Tier 3 Enterprise)</option>
-                        <option>$2,500 – $5,000/mo (Ongoing Retainer)</option>
-                        <option>To Be Scoped via Architecture Call</option>
-                      </select>
+                        placeholder="e.g. $10,000 or Flexible"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-colors"
+                      />
                     </div>
                   </div>
 

@@ -27,25 +27,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Next Dynamics | Ultra-Premium Creative Engineering Studio",
+  title: "Next Dynamics | Creative Frontend & Headless Web Studio",
   description:
-    "Bespoke web platforms for visionary brands. Sub-second speed, jaw-dropping GSAP motion, and zero commodity tools. Next.js, Three.js, and WebGL engineering for enterprises and funded scaleups.",
+    "High-converting SaaS marketing websites, headless WordPress architectures, and luxury brand storefronts. Sub-second speed and fluid GSAP motion engineered with Next.js.",
   keywords: [
-    "creative engineering",
-    "bespoke web development",
-    "Next.js studio",
+    "creative frontend studio",
+    "SaaS marketing websites",
+    "headless WordPress development",
+    "WPGraphQL Next.js",
     "GSAP animations",
-    "Three.js",
-    "WebGL",
-    "headless CMS",
-    "ultra-premium web design",
+    "custom e-commerce frontend",
+    "Core Web Vitals optimization",
     "performance engineering",
   ],
   authors: [{ name: "Next Dynamics", url: "https://nextdynamics.tech" }],
   openGraph: {
-    title: "Next Dynamics | Ultra-Premium Creative Engineering Studio",
+    title: "Next Dynamics | Creative Frontend & Headless Web Studio",
     description:
-      "Bespoke web platforms for visionary brands. Sub-second speed, jaw-dropping motion, zero commodity tools.",
+      "High-converting SaaS marketing websites, headless WordPress architectures, and luxury brand storefronts. Sub-second speed and fluid GSAP motion.",
     url: "https://nextdynamics.tech",
     siteName: "Next Dynamics",
     type: "website",
@@ -53,9 +52,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Next Dynamics | Ultra-Premium Creative Engineering Studio",
+    title: "Next Dynamics | Creative Frontend & Headless Web Studio",
     description:
-      "Bespoke web platforms for visionary brands. Sub-second speed, jaw-dropping motion, zero commodity tools.",
+      "High-converting SaaS marketing websites, headless WordPress architectures, and luxury brand storefronts.",
   },
   robots: {
     index: true,

@@ -33,7 +33,7 @@ export async function POST(request) {
     }
 
     const resend = new Resend(apiKey);
-    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || "shahidulshakil@proton.me";
+    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || "shahidul1920shakil@gmail.com";
     const fromEmail = process.env.RESEND_FROM_EMAIL || "Next Dynamics <onboarding@resend.dev>";
 
     const effectiveScope = scope || projectType || "Creative Web Experience & Engineering";

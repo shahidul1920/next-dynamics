@@ -147,12 +147,12 @@ export default function HeroJourney() {
           <div className="section-rail">
             <span className="flex items-center gap-2.5 text-paper font-mono text-[11px] sm:text-xs uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-gold-blueprint animate-pulse shadow-[0_0_10px_#d4af37]" />
-              {activeChapter === 0 && "01 / GARGANTUA ANOMALY"}
-              {activeChapter === 1 && "02 / GRAVITATIONAL SLINGSHOT"}
-              {activeChapter === 2 && "03 / TESSERACT SINGULARITY"}
+              {activeChapter === 0 && "01 / CREATIVE ENGINEERING"}
+              {activeChapter === 1 && "02 / TECHNICAL FOUNDATION"}
+              {activeChapter === 2 && "03 / PRODUCTION READY"}
             </span>
             <span className="hidden sm:inline font-mono text-xs uppercase tracking-widest text-paper-muted">
-              NEXT DYNAMICS · GENERAL RELATIVITY WEB EXPERIENCE
+              NEXT DYNAMICS · HIGH-PERFORMANCE WEB ENGINEERING
             </span>
           </div>
         </div>
@@ -167,23 +167,23 @@ export default function HeroJourney() {
             >
               <p className="chapter-label flex items-center gap-2 mb-3 sm:mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[10px] sm:text-xs">
                 <span className="signal-dot-gold" />
-                <span>01 / HIGH ORBIT ANOMALY</span>
+                <span>01 / CREATIVE FRONTEND STUDIO</span>
               </p>
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                <span className="block">Make the digital</span>
+                <span className="block">Web experiences</span>
                 <span className="block">
                   <em className="font-serif italic font-normal text-slate-200">
-                    feel extraordinary
+                    built to perform
                   </em>
                 </span>
               </h1>
               <p className="text-sm sm:text-base lg:text-xl text-paper-muted font-light leading-relaxed max-w-xl mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Immersive 3D environments, headless platforms, and high-throughput systems.
-                Designed from first principles, engineered by one independent studio.
+                High-converting SaaS marketing websites, headless WordPress architectures, and luxury brand flagships.
+                Fluid GSAP motion and sub-second speed engineered from first principles.
               </p>
               <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-paper-muted flex items-center gap-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-electric-cyan animate-ping" />
-                <span>Scroll to initiate gravitational dive</span>
+                <span>Scroll down to explore</span>
                 <svg
                   width="12"
                   height="20"
@@ -197,7 +197,7 @@ export default function HeroJourney() {
               </div>
             </div>
 
-            {/* ── Chapter 2: Gravitational Slingshot (Accretion Skim) ── */}
+            {/* ── Chapter 2: Technical Foundation ── */}
             <div
               ref={chapter2Ref}
               className="scene-chapter-2 absolute inset-y-0 left-0 flex flex-col justify-center max-w-xl lg:max-w-2xl will-change-transform"
@@ -205,36 +205,36 @@ export default function HeroJourney() {
             >
               <p className="chapter-label flex items-center gap-2 mb-3 sm:mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[10px] sm:text-xs">
                 <span className="signal-dot-gold" />
-                <span>02 / ACCRETION DISK SKIM</span>
+                <span>02 / TECHNICAL FOUNDATION</span>
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                <span className="block">Skim the event horizon</span>
+                <span className="block">Fast by default.</span>
                 <span className="block">
                   <em className="font-serif italic font-normal text-slate-200">
-                    of pure performance
+                    Built for scale.
                   </em>
                 </span>
               </h2>
               <p className="text-sm sm:text-base lg:text-xl text-paper-muted font-light leading-relaxed max-w-xl mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Where relativistic motion physics, fluid WebGL shaders, and high-throughput
-                cloud architecture converge without commodity bloat.
+                We replace slow page builders, bloated plugins, and template lock-in
+                with clean, maintainable Next.js code running at a consistent 60 frames per second.
               </p>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 lg:gap-6 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-paper">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-paper">
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                  01 / Sub-Second WebGL
+                  01 / Next.js & React 19
                 </span>
-                <span className="text-paper-muted hidden sm:inline">—</span>
+                <span className="text-paper-muted/60 hidden sm:inline">/</span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                  02 / Headless Core
+                  02 / Headless WP & CMS
                 </span>
-                <span className="text-paper-muted hidden sm:inline">—</span>
+                <span className="text-paper-muted/60 hidden sm:inline">/</span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 border border-white/20 backdrop-blur-md shadow-sm">
-                  03 / Enterprise Sourcing
+                  03 / 60 FPS GSAP Motion
                 </span>
               </div>
             </div>
 
-            {/* ── Chapter 3: Tesseract Singularity (Crossing the Horizon) ── */}
+            {/* ── Chapter 3: Production Ready ── */}
             <div
               ref={chapter3Ref}
               className="scene-chapter-3 absolute inset-y-0 left-0 flex flex-col justify-center max-w-xl lg:max-w-2xl will-change-transform"
@@ -242,26 +242,26 @@ export default function HeroJourney() {
             >
               <p className="chapter-label flex items-center gap-2 mb-3 sm:mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[10px] sm:text-xs">
                 <span className="signal-dot-gold" />
-                <span>03 / TESSERACT SINGULARITY</span>
+                <span>03 / PRODUCTION READY</span>
               </p>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                <span className="block">Breach the horizon</span>
+                <span className="block">Engineered with purpose.</span>
                 <span className="block">
                   <em className="font-serif italic font-normal text-slate-200">
-                    into infinite dimension
+                    Delivered on time.
                   </em>
                 </span>
               </h2>
               <p className="text-sm sm:text-base lg:text-xl text-paper-muted font-light leading-relaxed max-w-xl mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Crossing beyond conventional web design into multidimensional creative engineering.
-                Built to explore. Engineered to scale.
+                Every project is planned carefully, tested under load, and delivered with a predictable
+                schedule backed by clear milestone agreements.
               </p>
               <div>
                 <a
                   href="#work"
                   className="inline-flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-paper text-midnight font-mono text-[11px] sm:text-xs uppercase tracking-widest font-semibold hover:bg-electric-cyan hover:shadow-[0_0_28px_rgba(56,189,248,0.5)] transition-all transform hover:-translate-y-0.5"
                 >
-                  <span>Into the work</span>
+                  <span>Explore our work</span>
                   <span className="link-signal" aria-hidden="true">
                     <svg width="24" height="12" viewBox="0 0 30 18" fill="none">
                       <circle cx="4" cy="9" r="2.5" fill="currentColor" />

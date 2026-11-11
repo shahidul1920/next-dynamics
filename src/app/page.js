@@ -26,7 +26,7 @@ export default function Home() {
         <ContactStage />
       </main>
 
-      {/* Signature Horizon Footer with Interactive 3D Kinetic Sculpture */}
+      {/* Signature Horizon Footer & Studio Colophon */}
       <EditorialFooter />
     </div>
   );

@@ -11,48 +11,51 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const TIERS = [
   {
     tier: "01",
-    name: "Signature Digital Experience",
-    investment: "$6,000 – $12,000",
-    timeline: "3–5 weeks",
+    name: "Signature Platform",
+    investment: "$6,000 to $12,000",
+    timeline: "3 to 5 weeks",
     scope:
-      "High-growth startups, luxury brands, and flagship product showcases demanding bespoke art direction.",
+      "Modern marketing websites, product launchpads, and high-impact digital presences engineered for conversion and speed.",
     deliverables: [
-      "Bespoke 5–8 page architecture",
-      "Physics-based GSAP kinetic animations",
-      "Lighthouse 95+ performance tuning",
-      "Headless CMS setup (WPGraphQL / Sanity)",
-      "Technical SEO & GA4 architecture",
+      "Custom 5 to 8 page marketing architecture",
+      "Interactive product tour & animated feature previews",
+      "High-conversion pricing table & comparison matrix",
+      "Fluid GSAP motion & micro-interactions",
+      "Sub-second Lighthouse 95+ performance tuning",
+      "Technical SEO & analytics tracking (GA4)",
     ],
   },
   {
     tier: "02",
-    name: "Full-Stack Growth Platform",
-    investment: "$15,000 – $30,000",
-    timeline: "6–8 weeks",
+    name: "Headless Platform",
+    investment: "$10,000 to $20,000",
+    timeline: "5 to 7 weeks",
     featured: true,
     scope:
-      "Scaling digital brands, modern publications, and SaaS platforms requiring complex dynamic data flows.",
+      "Dynamic platforms and headless CMS migrations (Headless WordPress, Sanity) delivering instant page loads with zero plugin bloat.",
     deliverables: [
-      "Complete Next.js 15 App Router web application",
-      "Decoupled headless CMS architecture",
-      "Custom authentication & user portals",
-      "Third-party API pipelines & webhook automation",
-      "Sub-200ms page transitions & edge caching",
+      "Headless CMS setup via WPGraphQL or Sanity",
+      "Ultra-fast Next.js 15 decoupled frontend",
+      "Familiar admin editing workflows with zero frontend bloat",
+      "Instant editorial preview environments & live draft sync",
+      "Dynamic routing & edge caching architecture",
+      "Automated structured data (Schema) & performance SLA",
     ],
   },
   {
     tier: "03",
-    name: "Enterprise Bespoke Platform",
-    investment: "$40,000 – $80,000+",
-    timeline: "10–14 weeks",
+    name: "Digital Flagship",
+    investment: "$18,000 to $35,000+",
+    timeline: "6 to 10 weeks",
     scope:
-      "Large enterprises, global supply chain operators, and multi-sided platforms with high transactional concurrency.",
+      "Premium brand presences, custom e-commerce storefronts, and immersive digital flagships built to lead their category.",
     deliverables: [
-      "End-to-end custom platform engineering",
-      "Automated 1688 factory sourcing & inventory APIs",
-      "Applied LLM workflows & autonomous task agents",
-      "High-concurrency PostgreSQL / MongoDB architecture",
-      "14-Day Delivery Guarantee & dedicated SLA",
+      "Custom e-commerce frontend & editorial storefront",
+      "Tailored brand typography & visual storytelling layouts",
+      "Fluid cart drawer & friction-free checkout integrations",
+      "Interactive micro-details & 60 FPS GSAP motion",
+      "Multi-currency / regional localization architecture",
+      "Full repository handover & dedicated staging SLA",
     ],
   },
 ];
@@ -99,13 +102,12 @@ export default function InvestmentStructure() {
           <h2 className="text-3xl sm:text-5xl lg:text-6xl text-paper font-medium tracking-tight mb-6">
             Predictable value.{" "}
             <em className="font-serif italic font-normal text-slate-300">
-              Uncompromising craft.
+              Clear milestones.
             </em>
           </h2>
           <p className="text-base sm:text-lg text-paper-muted font-light leading-relaxed">
-            Every engagement is scoped with precision and milestone protection.
-            50% Inception, 30% Staging Approval, and 20% Final Launch — backed by our
-            14-Day Delivery Guarantee.
+            Every engagement has a fixed scope and milestone structure:
+            50% at kickoff, 30% upon staging review, and 20% on final live deployment.
           </p>
         </div>
 
