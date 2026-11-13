@@ -191,9 +191,9 @@ export default function SelectedWork() {
           <div className="badge-gold mb-4 inline-flex">
             <span>Production Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl text-paper font-medium tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl text-white font-semibold tracking-tight mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
             Work we have{" "}
-            <em className="font-serif italic font-normal text-slate-300">
+            <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
               built and shipped
             </em>
           </h2>
@@ -297,9 +297,9 @@ export default function SelectedWork() {
                 <Quote className="w-3.5 h-3.5" />
                 <span>Executive Endorsements · Measurable Outcomes</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-paper tracking-tight">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                 Tested in production.{" "}
-                <em className="font-serif italic font-normal text-slate-300">
+                <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
                   Validated by founders.
                 </em>
               </h3>

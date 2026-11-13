@@ -100,9 +100,9 @@ export default function InvestmentStructure() {
 
         {/* Header */}
         <div className="invest-header max-w-3xl mb-20">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl text-paper font-medium tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl text-white font-semibold tracking-tight mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
             Predictable value.{" "}
-            <em className="font-serif italic font-normal text-slate-300">
+            <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
               Clear milestones.
             </em>
           </h2>

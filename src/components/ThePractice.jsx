@@ -108,9 +108,9 @@ export default function ThePractice() {
         {/* Practice Header */}
         <div className="practice-header flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl text-paper font-medium tracking-tight mb-4 leading-[1.08]">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl text-white font-semibold tracking-tight mb-4 leading-[1.08] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
               Useful{" "}
-              <em className="font-serif italic font-normal text-slate-300">
+              <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
                 by design
               </em>
             </h2>
@@ -226,9 +226,9 @@ export default function ThePractice() {
                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan animate-pulse" />
                 <span>Execution Protocol · Phase 01 to 04</span>
               </div>
-              <h3 className="text-3xl sm:text-5xl lg:text-6xl font-medium text-paper tracking-tight leading-[1.1]">
+              <h3 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.1] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                 From first principles{" "}
-                <em className="font-serif italic font-normal text-slate-300">
+                <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
                   to production scale
                 </em>
               </h3>

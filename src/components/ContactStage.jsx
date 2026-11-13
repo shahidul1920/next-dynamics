@@ -95,9 +95,9 @@ export default function ContactStage() {
           {/* Left Column: Heading and Direct Signal */}
           <div className="contact-header lg:col-span-5 flex flex-col justify-between space-y-10">
             <div>
-              <h2 className="text-4xl sm:text-6xl text-paper font-medium tracking-tight mb-6 leading-[1.08]">
+              <h2 className="text-4xl sm:text-6xl text-white font-semibold tracking-tight mb-6 leading-[1.08] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                 Your next platform{" "}
-                <em className="font-serif italic font-normal text-slate-300">
+                <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
                   starts here
                 </em>
               </h2>

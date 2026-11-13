@@ -169,19 +169,16 @@ export default function HeroJourney() {
                 <span className="signal-dot-gold" />
                 <span>01 / CREATIVE FRONTEND STUDIO</span>
               </p>
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.05] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                <span className="block">High-performance</span>
-                <span className="block">web architecture</span>
-                <span className="block text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-slate-300 font-light mt-2 sm:mt-3 leading-tight">
-                  for brands that{" "}
-                  <em className="font-serif italic font-normal text-paper">
-                    can&apos;t afford to be slow.
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-white font-semibold leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                <span className="block text-white">High-performance</span>
+                <span className="block text-white">
+                  <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
+                    web architecture.
                   </em>
                 </span>
               </h1>
-              <p className="text-sm sm:text-base lg:text-xl text-paper-muted font-light leading-relaxed max-w-xl mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                Bespoke SaaS marketing flagships, headless WordPress migrations, and luxury brand frontends.
-                Sub-second speed and fluid GSAP motion engineered directly by senior partners.
+              <p className="text-sm sm:text-base lg:text-lg text-paper-muted font-light leading-relaxed max-w-lg mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                For brands that can&apos;t afford to be slow. Sub-second Next.js flagships, headless WordPress migrations, and fluid GSAP motion engineered from first principles.
               </p>
               <div className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-paper-muted flex items-center gap-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-electric-cyan animate-ping" />
@@ -209,10 +206,10 @@ export default function HeroJourney() {
                 <span className="signal-dot-gold" />
                 <span>02 / TECHNICAL FOUNDATION</span>
               </p>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                <span className="block">Fast by default.</span>
-                <span className="block">
-                  <em className="font-serif italic font-normal text-slate-200">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white font-semibold leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                <span className="block text-white">Fast by default.</span>
+                <span className="block text-white">
+                  <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
                     Built for scale.
                   </em>
                 </span>
@@ -246,10 +243,10 @@ export default function HeroJourney() {
                 <span className="signal-dot-gold" />
                 <span>03 / PRODUCTION READY</span>
               </p>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-paper font-medium leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                <span className="block">Engineered with purpose.</span>
-                <span className="block">
-                  <em className="font-serif italic font-normal text-slate-200">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white font-semibold leading-[1.08] mb-4 sm:mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                <span className="block text-white">Engineered with purpose.</span>
+                <span className="block text-white">
+                  <em className="font-serif italic font-normal text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.45)]">
                     Delivered on time.
                   </em>
                 </span>
