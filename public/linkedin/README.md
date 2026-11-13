@@ -1,5 +1,7 @@
 # Next Dynamics — LinkedIn Brand Assets & Company Page Setup
 
+Official LinkedIn Company Page: [linkedin.com/company/nextdynamics-tech](https://www.linkedin.com/company/nextdynamics-tech/)
+
 All visual assets and copy for the **Next Dynamics** LinkedIn company presence are contained in this directory.
 
 - 📄 **Full Written Copy, Taglines, About Section & Launch Posts:** See [`LINKEDIN_PAGE_COPY.md`](./LINKEDIN_PAGE_COPY.md)

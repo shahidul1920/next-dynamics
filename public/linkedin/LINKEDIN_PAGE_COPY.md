@@ -24,11 +24,11 @@ This document contains all the copy, fields, character counts, and launch posts 
 Next Dynamics
 ```
 
-### **LinkedIn Public URL (Vanity URL)**
+### **Official LinkedIn Page URL**
 ```text
-linkedin.com/company/nextdynamics
+https://www.linkedin.com/company/nextdynamics-tech/
 ```
-*(Alternative if taken: `linkedin.com/company/nextdynamics-tech`)*
+*(Public Handle / Vanity Slug: `nextdynamics-tech`)*
 
 ### **Tagline** *(Max 120 characters)*
 > **Recommended (80 chars):**
@@ -199,8 +199,8 @@ Thinking about upgrading your brand's architecture this quarter? Drop us a note 
 ### **Post 3: Production Case Study / Proof of Craft**
 
 ```text
-"Load times dropped from 3.2s to sub-400ms, and our client consultation inquiry rate doubled in the first quarter."
-— Tanvir Ahmed, Founder & Creative Director at Astha Creatives
+"Before working with Next Dynamics, our old portfolio was sluggish and prospective clients kept dropping off before seeing our work. They rebuilt everything from scratch—now pages pop up instantly on phones and the animations feel incredibly smooth and premium. We started getting twice as many project inquiries within the first month."
+— Redwanul Haque, Founder at Astha Creatives
 
 When you re-engineer a digital experience with clean code and mathematical performance benchmarks, business results follow:
 

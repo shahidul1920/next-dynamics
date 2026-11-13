@@ -30,12 +30,18 @@ export default function HeroJourney() {
     () => {
       if (!containerRef.current || !stickyRef.current) return;
 
-      // Pin the sticky visual stage with responsive 0.45s scrub (instantaneous response when reversing scroll)
+      // Responsive scrub: on touch/mobile devices, ultra-responsive 0.12s scrub eliminates thumb lag
+      const isTouch =
+        typeof window !== "undefined" &&
+        (window.matchMedia("(pointer: coarse)").matches ||
+          window.innerWidth < 768);
+      const scrubVal = isTouch ? 0.12 : 0.45;
+
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
         end: "bottom bottom",
-        scrub: 0.45,
+        scrub: scrubVal,
         onUpdate: (self) => {
           const p = self.progress;
           progressRef.current = p;
@@ -49,21 +55,26 @@ export default function HeroJourney() {
             progressBarRef.current.style.width = `${percent}%`;
           }
 
-          // Active Chapter: Only trigger React state change when chapter index actually transitions!
-          const nextChapter = p < 0.35 ? 0 : p < 0.72 ? 1 : 2;
+          // Active Chapter: Switches during the discrete negative space gaps!
+          const nextChapter = p < 0.31 ? 0 : p < 0.67 ? 1 : 2;
           if (nextChapter !== activeChapterRef.current) {
             activeChapterRef.current = nextChapter;
             setActiveChapter(nextChapter);
           }
 
-          // ── CHAPTER 1: GARGANTUA ANOMALY (p: 0.0 -> 0.35) ──
+          // ── CHAPTER 1: CREATIVE FRONTEND STUDIO (p: 0.0 -> 0.28) ──
           if (chapter1Ref.current) {
-            if (p <= 0.36) {
-              const fade = Math.max(0, 1 - p / 0.28);
-              const easeY = -p * 90;
+            if (p < 0.22) {
               gsap.set(chapter1Ref.current, {
-                opacity: fade,
-                y: easeY,
+                opacity: 1,
+                y: -p * 60,
+                pointerEvents: "auto",
+              });
+            } else if (p <= 0.28) {
+              const fade = (0.28 - p) / 0.06;
+              gsap.set(chapter1Ref.current, {
+                opacity: Math.max(0, fade),
+                y: -p * 60,
                 pointerEvents: fade > 0.15 ? "auto" : "none",
               });
             } else {
@@ -71,40 +82,55 @@ export default function HeroJourney() {
             }
           }
 
-          // ── CHAPTER 2: GRAVITATIONAL SLINGSHOT (p: 0.24 -> 0.76) ──
+          // ── CHAPTER 2: TECHNICAL FOUNDATION (p: 0.33 -> 0.65) ──
           if (chapter2Ref.current) {
-            if (p > 0.24 && p <= 0.76) {
-              let fade = 0;
-              if (p < 0.42) {
-                fade = (p - 0.24) / 0.18;
-              } else if (p > 0.60) {
-                fade = 1 - (p - 0.60) / 0.16;
-              } else {
-                fade = 1;
-              }
-              const easeY = (0.5 - p) * 110;
+            if (p < 0.33 || p > 0.65) {
+              gsap.set(chapter2Ref.current, { opacity: 0, pointerEvents: "none" });
+            } else if (p < 0.39) {
+              const fade = (p - 0.33) / 0.06;
+              const easeY = (0.49 - p) * 90;
               gsap.set(chapter2Ref.current, {
                 opacity: Math.max(0, Math.min(1, fade)),
                 y: easeY,
                 pointerEvents: fade > 0.15 ? "auto" : "none",
               });
+            } else if (p <= 0.58) {
+              const easeY = (0.49 - p) * 90;
+              gsap.set(chapter2Ref.current, {
+                opacity: 1,
+                y: easeY,
+                pointerEvents: "auto",
+              });
             } else {
-              gsap.set(chapter2Ref.current, { opacity: 0, pointerEvents: "none" });
+              const fade = (0.65 - p) / 0.07;
+              const easeY = (0.49 - p) * 90;
+              gsap.set(chapter2Ref.current, {
+                opacity: Math.max(0, Math.min(1, fade)),
+                y: easeY,
+                pointerEvents: fade > 0.15 ? "auto" : "none",
+              });
             }
           }
 
-          // ── CHAPTER 3: THE TESSERACT SINGULARITY (p: 0.62 -> 1.0) ──
+          // ── CHAPTER 3: PRODUCTION READY (p: 0.70 -> 1.0) ──
           if (chapter3Ref.current) {
-            if (p > 0.62) {
-              const fade = Math.min(1, Math.max(0, (p - 0.62) / 0.22));
-              const easeY = (1 - p) * 80;
+            if (p < 0.70) {
+              gsap.set(chapter3Ref.current, { opacity: 0, pointerEvents: "none" });
+            } else if (p < 0.76) {
+              const fade = (p - 0.70) / 0.06;
+              const easeY = (1 - p) * 60;
               gsap.set(chapter3Ref.current, {
-                opacity: fade,
+                opacity: Math.max(0, Math.min(1, fade)),
                 y: easeY,
                 pointerEvents: fade > 0.15 ? "auto" : "none",
               });
             } else {
-              gsap.set(chapter3Ref.current, { opacity: 0, pointerEvents: "none" });
+              const easeY = (1 - p) * 60;
+              gsap.set(chapter3Ref.current, {
+                opacity: 1,
+                y: easeY,
+                pointerEvents: "auto",
+              });
             }
           }
         },
@@ -126,7 +152,7 @@ export default function HeroJourney() {
     <section
       id="top"
       ref={containerRef}
-      className="relative h-[320vh] bg-midnight w-full"
+      className="relative h-[260vh] sm:h-[320vh] bg-midnight w-full"
     >
       {/* Pinned Sticky Full-Screen Visual Stage */}
       <div

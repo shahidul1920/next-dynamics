@@ -7,6 +7,8 @@ export const SITE = {
   email: "hello@nextdynamics.tech",
   whatsapp: "+880 1879-539832",
   whatsappUrl: "https://wa.me/8801879539832",
+  linkedin: "https://www.linkedin.com/company/nextdynamics-tech/",
+  linkedinHandle: "nextdynamics-tech",
   hero: {
     eyebrow: "CREATIVE FRONTEND STUDIO",
     headlineTop: "High-Performance Web Architecture",

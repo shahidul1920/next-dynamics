@@ -91,10 +91,21 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
     const scene = new THREE.Scene();
     scene.colorSpace = THREE.SRGBColorSpace;
 
-    // Optimized raymarching parameters (72 steps with 0.0125 step size yields identical volume with 44% faster GPU frame times)
+    // Detect mobile device/touch to dynamically optimize raymarcher for 60 FPS fluidity
+    const isMobileDevice =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 ||
+        window.matchMedia("(pointer: coarse)").matches ||
+        initialAspect < 0.75);
+
+    // Adaptive iterations: 32 steps on phone for 60 FPS mobile fluidity; 72 steps on desktop
+    const iterCount = isMobileDevice ? 32 : 72;
+    const stepSizeVal = isMobileDevice ? 0.026 : 0.0125;
+
+    // Optimized raymarching parameters
     const uniforms = {
-      iterations: uniform(float(72)),
-      stepSize: uniform(float(0.0125)),
+      iterations: uniform(float(iterCount)),
+      stepSize: uniform(float(stepSizeVal)),
       noiseFactor: uniform(float(0.01)),
       power: uniform(float(0.3)),
 
@@ -305,7 +316,11 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1.2;
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+
+      // High-DPI screens on phone choke GPUs during raymarching.
+      // Cap DPR to 1.0 on mobile to save millions of subpixel calculations; 1.5 on desktop.
+      const maxDpr = isMobileDevice ? 1.0 : 1.5;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxDpr));
 
       // Visibility tracker: Pause GPU raymarcher when scrolled far out of view
       // Uses 600px rootMargin so GPU warms up and renders before the canvas reaches the viewport!
@@ -318,26 +333,28 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
       );
       observer.observe(canvas);
 
-      // MisterPrada PostProcessing Bloom setup
-      try {
-        composer = new THREE.PostProcessing(renderer);
-        const scenePass = pass(scene, camera);
-        scenePass.setMRT(
-          mrt({
-            output,
-            emissive,
-          })
-        );
-        const colorPass = scenePass.getTextureNode("output");
-        const bloomPass = bloom(
-          colorPass,
-          uniform(float(0.217)), // Strength from State.js line 31
-          uniform(float(0.0)),   // Radius
-          uniform(float(0.0))    // Threshold
-        );
-        composer.outputNode = colorPass.add(bloomPass);
-      } catch (err) {
-        console.warn("Composer setup fallback:", err);
+      // MisterPrada PostProcessing Bloom setup (desktop only for max 60 FPS mobile throughput)
+      if (!isMobileDevice) {
+        try {
+          composer = new THREE.PostProcessing(renderer);
+          const scenePass = pass(scene, camera);
+          scenePass.setMRT(
+            mrt({
+              output,
+              emissive,
+            })
+          );
+          const colorPass = scenePass.getTextureNode("output");
+          const bloomPass = bloom(
+            colorPass,
+            uniform(float(0.217)), // Strength from State.js line 31
+            uniform(float(0.0)),   // Radius
+            uniform(float(0.0))    // Threshold
+          );
+          composer.outputNode = colorPass.add(bloomPass);
+        } catch (err) {
+          console.warn("Composer setup fallback:", err);
+        }
       }
 
       // Smooth camera interpolation state (framed adaptively for aspect ratio)
@@ -409,8 +426,8 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
         camera.position.copy(currentCamPos);
         camera.lookAt(currentLookAt);
 
-        // Render scene
-        if (composer) {
+        // Render scene (direct render on mobile avoids multi-pass post-processing overhead)
+        if (composer && !isMobileDevice) {
           composer.renderAsync();
         } else {
           renderer.renderAsync(scene, camera);
@@ -428,6 +445,9 @@ function Scroll3DCanvas({ progressRef, isPaused = false }) {
       camera.updateProjectionMatrix();
       if (renderer) {
         renderer.setSize(window.innerWidth, window.innerHeight);
+        const currentIsMobile =
+          window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches;
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, currentIsMobile ? 1.0 : 1.5));
       }
     };
     window.addEventListener("resize", handleResize);

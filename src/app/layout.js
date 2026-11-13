@@ -110,7 +110,10 @@ const organizationSchema = {
     "@type": "PostalAddress",
     addressCountry: "BD",
   },
-  sameAs: ["https://wa.me/8801879539832"],
+  sameAs: [
+    "https://wa.me/8801879539832",
+    "https://www.linkedin.com/company/nextdynamics-tech/",
+  ],
   knowsAbout: [
     "Creative Frontend Engineering",
     "Headless WordPress Development",

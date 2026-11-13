@@ -111,7 +111,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href={SITE.linkedin || "https://www.linkedin.com/company/nextdynamics-tech/"}
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-electric-cyan/40 hover:bg-white/10 transition-colors"
