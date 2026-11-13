@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Plus, Minus, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Plus, Minus, ArrowUpRight, CheckCircle2, Compass, Code2, Gauge, ShieldCheck } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -217,52 +217,141 @@ export default function ThePractice() {
           })}
         </div>
 
-        {/* Working Note Protocol (Apricode 4-step sequence) */}
-        <div className="rounded-2xl bg-surface/50 border border-white/[0.08] p-8 sm:p-12">
-          <div className="mb-8">
-            <h3 className="text-2xl sm:text-3xl font-medium text-paper mb-2">
-              From first idea{" "}
-              <em className="font-serif italic font-normal text-slate-300">
-                to the details
-              </em>
-            </h3>
-            <p className="text-xs font-mono text-paper-muted uppercase tracking-wider">
-              A transparent engineering progression
-            </p>
+        {/* ── Seamless Spacing Transition: Capabilities into Protocol ── */}
+        <div className="pt-24 sm:pt-32 border-t border-white/[0.08]">
+          {/* Header with High Negative Space */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-16 sm:mb-20">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-electric-cyan uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full bg-electric-cyan/10 border border-electric-cyan/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan animate-pulse" />
+                <span>Execution Protocol · Phase 01 to 04</span>
+              </div>
+              <h3 className="text-3xl sm:text-5xl lg:text-6xl font-medium text-paper tracking-tight leading-[1.1]">
+                From first principles{" "}
+                <em className="font-serif italic font-normal text-slate-300">
+                  to production scale
+                </em>
+              </h3>
+            </div>
+            <div className="max-w-md text-sm sm:text-base text-paper-muted font-light leading-relaxed">
+              <p>
+                A transparent, milestone-governed engineering sequence. Zero junior delegation, zero bloated status meetings—direct senior partner access from kickoff to live deployment.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-              <span className="block font-mono text-xs text-electric-cyan tracking-wider mb-2">
-                01 / DISCOVER
-              </span>
-              <p className="text-sm font-medium text-paper">
-                Understand the requirements & architecture
-              </p>
+          {/* 4-Step Spacious Visual Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {/* Step 01 */}
+            <div className="group relative rounded-2xl bg-surface/40 hover:bg-surface/80 border border-white/[0.07] hover:border-electric-cyan/40 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.06]">
+                  <span className="font-mono text-xs text-electric-cyan tracking-widest font-semibold uppercase">
+                    01 / DISCOVER
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-paper-muted group-hover:text-electric-cyan transition-colors">
+                    <Compass className="w-4 h-4" />
+                  </div>
+                </div>
+                <h4 className="text-xl sm:text-2xl font-medium text-paper mb-3">
+                  Architecture & Scope
+                </h4>
+                <p className="text-xs sm:text-sm text-paper-muted font-light leading-relaxed mb-8">
+                  Deep technical profiling, Core Web Vitals audit, and content modeling before writing a single line of production code.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-white/[0.06]">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-paper-muted/80 block mb-1">
+                  Key Output
+                </span>
+                <span className="text-xs font-mono text-paper font-medium">
+                  Technical Architecture Spec
+                </span>
+              </div>
             </div>
-            <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-              <span className="block font-mono text-xs text-electric-cyan tracking-wider mb-2">
-                02 / MAKE
-              </span>
-              <p className="text-sm font-medium text-paper">
-                Build a focused prototype with real code
-              </p>
+
+            {/* Step 02 */}
+            <div className="group relative rounded-2xl bg-surface/40 hover:bg-surface/80 border border-white/[0.07] hover:border-electric-cyan/40 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.06]">
+                  <span className="font-mono text-xs text-electric-cyan tracking-widest font-semibold uppercase">
+                    02 / MAKE
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-paper-muted group-hover:text-electric-cyan transition-colors">
+                    <Code2 className="w-4 h-4" />
+                  </div>
+                </div>
+                <h4 className="text-xl sm:text-2xl font-medium text-paper mb-3">
+                  Interactive Staging
+                </h4>
+                <p className="text-xs sm:text-sm text-paper-muted font-light leading-relaxed mb-8">
+                  Functional Next.js sandbox built with production code, real data, and headless APIs—no static Figma guesswork.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-white/[0.06]">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-paper-muted/80 block mb-1">
+                  Key Output
+                </span>
+                <span className="text-xs font-mono text-paper font-medium">
+                  Private Live Staging URL
+                </span>
+              </div>
             </div>
-            <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-              <span className="block font-mono text-xs text-electric-cyan tracking-wider mb-2">
-                03 / REFINE
-              </span>
-              <p className="text-sm font-medium text-paper">
-                Tune motion, security & Lighthouse 99+
-              </p>
+
+            {/* Step 03 */}
+            <div className="group relative rounded-2xl bg-surface/40 hover:bg-surface/80 border border-white/[0.07] hover:border-electric-cyan/40 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.06]">
+                  <span className="font-mono text-xs text-electric-cyan tracking-widest font-semibold uppercase">
+                    03 / REFINE
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-paper-muted group-hover:text-electric-cyan transition-colors">
+                    <Gauge className="w-4 h-4" />
+                  </div>
+                </div>
+                <h4 className="text-xl sm:text-2xl font-medium text-paper mb-3">
+                  Motion & CWV Tuning
+                </h4>
+                <p className="text-xs sm:text-sm text-paper-muted font-light leading-relaxed mb-8">
+                  Fine-tuning 60 FPS GSAP timelines outside React re-render cycles, edge caching, and sub-400ms server response times.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-white/[0.06]">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-paper-muted/80 block mb-1">
+                  Key Output
+                </span>
+                <span className="text-xs font-mono text-paper font-medium">
+                  98+ Lighthouse Certification
+                </span>
+              </div>
             </div>
-            <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-              <span className="block font-mono text-xs text-electric-cyan tracking-wider mb-2">
-                04 / EVOLVE
-              </span>
-              <p className="text-sm font-medium text-paper">
-                Launch with 14-day SLA & ongoing sprints
-              </p>
+
+            {/* Step 04 */}
+            <div className="group relative rounded-2xl bg-surface/40 hover:bg-surface/80 border border-white/[0.07] hover:border-electric-cyan/40 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/[0.06]">
+                  <span className="font-mono text-xs text-electric-cyan tracking-widest font-semibold uppercase">
+                    04 / EVOLVE
+                  </span>
+                  <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-paper-muted group-hover:text-electric-cyan transition-colors">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                </div>
+                <h4 className="text-xl sm:text-2xl font-medium text-paper mb-3">
+                  Production SLA
+                </h4>
+                <p className="text-xs sm:text-sm text-paper-muted font-light leading-relaxed mb-8">
+                  White-glove DNS cutover, automated CI/CD deployment, full code IP handover, and 14 days of dedicated post-launch sprint capacity.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-white/[0.06]">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-paper-muted/80 block mb-1">
+                  Key Output
+                </span>
+                <span className="text-xs font-mono text-paper font-medium">
+                  Production Cutover & SLA
+                </span>
+              </div>
             </div>
           </div>
         </div>

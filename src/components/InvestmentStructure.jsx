@@ -11,52 +11,53 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const TIERS = [
   {
     tier: "01",
-    name: "Signature Platform",
-    investment: "$6,000 to $12,000",
-    timeline: "3 to 5 weeks",
+    name: "The Launchpad",
+    investment: "Starting from $499",
+    timeline: "48 to 72 hours",
     scope:
-      "Modern marketing websites, product launchpads, and high-impact digital presences engineered for conversion and speed.",
+      "A lightning-fast, high-performance landing page custom-engineered with Next.js and subtle motion. Perfect for validating a new idea or replacing an outdated site fast.",
     deliverables: [
-      "Custom 5 to 8 page marketing architecture",
-      "Interactive product tour & animated feature previews",
-      "High-conversion pricing table & comparison matrix",
-      "Fluid GSAP motion & micro-interactions",
-      "Sub-second Lighthouse 95+ performance tuning",
-      "Technical SEO & analytics tracking (GA4)",
+      "Custom-engineered Next.js architecture (zero templates)",
+      "Minimal GSAP micro-animations & smooth interactions",
+      "Brand color, logo, and copy integration",
+      "Sub-second Lighthouse 95+ performance",
+      "Mobile-responsive standard layout",
+      "Fast 48-72 hour deployment",
     ],
+    cta: "Start Project",
   },
   {
     tier: "02",
-    name: "Headless Platform",
-    investment: "$10,000 to $20,000",
-    timeline: "5 to 7 weeks",
+    name: "The Growth Engine",
+    investment: "$1,500 to $3,500",
+    timeline: "2 to 3 weeks",
     featured: true,
     scope:
-      "Dynamic platforms and headless CMS migrations (Headless WordPress, Sanity) delivering instant page loads with zero plugin bloat.",
+      "A custom-designed, CMS-powered platform built to convert traffic and scale with your marketing efforts.",
     deliverables: [
-      "Headless CMS setup via WPGraphQL or Sanity",
-      "Ultra-fast Next.js 15 decoupled frontend",
-      "Familiar admin editing workflows with zero frontend bloat",
-      "Instant editorial preview environments & live draft sync",
-      "Dynamic routing & edge caching architecture",
-      "Automated structured data (Schema) & performance SLA",
+      "Custom design for Hero and key feature blocks",
+      "Headless CMS setup (WPGraphQL or Sanity)",
+      "Familiar admin editing workflows",
+      "Standard fluid GSAP scroll animations",
+      "Technical SEO & analytics tracking (GA4)",
     ],
+    cta: "Start Project",
   },
   {
     tier: "03",
     name: "Digital Flagship",
-    investment: "$18,000 to $35,000+",
-    timeline: "6 to 10 weeks",
+    investment: "Custom / Let's Talk",
+    timeline: "6+ weeks",
     scope:
-      "Premium brand presences, custom e-commerce storefronts, and immersive digital flagships built to lead their category.",
+      "Premium brand presences, custom e-commerce storefronts, and immersive digital platforms engineered from first principles.",
     deliverables: [
-      "Custom e-commerce frontend & editorial storefront",
-      "Tailored brand typography & visual storytelling layouts",
-      "Fluid cart drawer & friction-free checkout integrations",
-      "Interactive micro-details & 60 FPS GSAP motion",
+      "Bespoke engineering and UI/UX design from scratch",
+      "Custom E-commerce / Headless Shopify",
+      "Complex interactive 3D & advanced GSAP motion",
       "Multi-currency / regional localization architecture",
-      "Full repository handover & dedicated staging SLA",
+      "Dedicated performance SLA and full code ownership",
     ],
+    cta: "Book Discovery Call",
   },
 ];
 
@@ -108,6 +109,7 @@ export default function InvestmentStructure() {
           <p className="text-base sm:text-lg text-paper-muted font-light leading-relaxed">
             Every engagement has a fixed scope and milestone structure:
             50% at kickoff, 30% upon staging review, and 20% on final live deployment.
+            Zero junior delegation—all tiers are engineered directly by senior studio partners.
           </p>
         </div>
 
@@ -128,7 +130,7 @@ export default function InvestmentStructure() {
                     <span>Tier {tier.tier}</span>
                     {tier.featured && (
                       <span className="px-2 py-0.5 rounded-full bg-gold-blueprint/10 border border-gold-blueprint/30 text-gold-blueprint text-[10px]">
-                        FLAGSHIP
+                        MOST POPULAR
                       </span>
                     )}
                   </div>
@@ -173,7 +175,7 @@ export default function InvestmentStructure() {
                     : "bg-white/[0.04] text-paper border border-white/10 hover:border-white/20"
                 }`}
               >
-                <span>Initiate Review</span>
+                <span>{tier.cta || "Start Project"}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

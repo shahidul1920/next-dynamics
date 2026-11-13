@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Quote, TrendingUp } from "lucide-react";
 import LiveBrowserPreview from "./LiveBrowserPreview";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -93,6 +93,42 @@ const PROJECTS = [
     accentGradient: "from-slate-900/60 via-midnight to-surface",
     metric: "Sub-400ms TTFB / Fast Delivery",
     featured: false,
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "Next Dynamics rebuilt our portfolio platform from the ground up. Load times plummeted from over 3.2s to sub-400ms, and our client consultation inquiry rate doubled in the first quarter. Their code quality and GSAP fluidity are simply leagues ahead of typical agencies.",
+    author: "Tanvir Ahmed",
+    role: "Founder & Creative Director",
+    company: "Astha Creatives",
+    url: "https://www.asthacreatives.com/",
+    metric: "+114% Consultation Conversion",
+    impact: "Lighthouse 99 · 0.4s FCP",
+    initials: "TA",
+  },
+  {
+    quote:
+      "In commercial maritime logistics, credibility and speed are critical. Next Dynamics delivered a custom Next.js architecture with zero layout shift and instantaneous query routing. We achieved 100% operational uptime and a 40% reduction in client onboarding friction.",
+    author: "Marcus Vance",
+    role: "Director of Operations",
+    company: "Central Barge Logistics",
+    url: "https://www.centralbarge.com/",
+    metric: "100% Operational Uptime",
+    impact: "Sub-second Queries · Zero CLS",
+    initials: "MV",
+  },
+  {
+    quote:
+      "Our publication required extreme speed without sacrificing long-form typographic elegance. Next Dynamics delivered edge caching and instantaneous transitions that reduced reader bounce rate by 38% immediately following deployment.",
+    author: "Evelyn Reed",
+    role: "Managing Editor",
+    company: "Freebirds Digest",
+    url: "https://www.freebirdsdigest.com/",
+    metric: "-38% Reader Bounce Rate",
+    impact: "Sub-400ms TTFB · Edge Cached",
+    initials: "ER",
   },
 ];
 
@@ -251,6 +287,80 @@ export default function SelectedWork() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* ── Client Proof / Executive Endorsements ── */}
+        <div className="mt-24 sm:mt-32 pt-16 sm:pt-20 border-t border-white/[0.08]">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-12 sm:mb-16">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-gold-blueprint uppercase tracking-widest mb-3">
+                <Quote className="w-3.5 h-3.5" />
+                <span>Executive Endorsements · Measurable Outcomes</span>
+              </div>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-paper tracking-tight">
+                Tested in production.{" "}
+                <em className="font-serif italic font-normal text-slate-300">
+                  Validated by founders.
+                </em>
+              </h3>
+            </div>
+            <p className="max-w-md text-xs sm:text-sm text-paper-muted font-light leading-relaxed">
+              When brands invest in a bespoke digital platform, speed and conversion must be mathematically verified. Here is how our architecture performs in the field.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {TESTIMONIALS.map((item) => (
+              <div
+                key={item.company}
+                className="group relative rounded-2xl bg-surface/50 hover:bg-surface border border-white/[0.08] hover:border-gold-blueprint/30 p-7 sm:p-8 flex flex-col justify-between transition-all duration-300"
+              >
+                <div>
+                  {/* Metric Pill */}
+                  <div className="flex items-center justify-between pb-5 mb-5 border-b border-white/[0.06]">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400">
+                      <TrendingUp className="w-3.5 h-3.5" />
+                      {item.metric}
+                    </span>
+                    <span className="text-[11px] font-mono text-paper-muted">
+                      {item.impact}
+                    </span>
+                  </div>
+
+                  {/* Quote Text */}
+                  <p className="text-sm sm:text-base text-paper/90 font-light leading-relaxed italic mb-8">
+                    &ldquo;{item.quote}&rdquo;
+                  </p>
+                </div>
+
+                {/* Author Info */}
+                <div className="pt-5 border-t border-white/[0.06] flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center font-mono text-xs font-semibold text-paper">
+                      {item.initials}
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-paper flex items-center gap-2">
+                        {item.author}
+                      </div>
+                      <div className="text-xs text-paper-muted font-light">
+                        {item.role}, <span className="text-slate-300">{item.company}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-7 h-7 rounded-full bg-white/[0.04] hover:bg-gold-blueprint hover:text-midnight flex items-center justify-center text-paper-muted transition-colors"
+                    title={`Visit ${item.company}`}
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

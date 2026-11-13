@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -151,52 +152,71 @@ export default function ContactStage() {
               </div>
             </div>
 
-            {/* Studio Standards & Direct Commitments */}
-            <div className="rounded-2xl bg-surface/50 border border-white/[0.08] p-6 space-y-4 backdrop-blur-md">
-              <div className="text-[10px] font-mono uppercase tracking-widest text-gold-blueprint">
-                STUDIO STANDARDS · DIRECT ACCESS
-              </div>
-              <div className="space-y-3.5">
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-paper">Direct Partner Access</p>
-                    <p className="text-[11px] text-paper-muted leading-relaxed mt-0.5">
-                      Work directly with senior engineers. Zero junior delegation or account manager telephone game.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-paper">14-Day Production Staging</p>
-                    <p className="text-[11px] text-paper-muted leading-relaxed mt-0.5">
-                      Initial functional deployment live on your staging domain within 14 business days.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-paper">Full Code & Infrastructure Ownership</p>
-                    <p className="text-[11px] text-paper-muted leading-relaxed mt-0.5">
-                      100% clean repository handover with zero proprietary vendor lock-in.
-                    </p>
-                  </div>
+            {/* Meet the Engineers / Direct Partner Access */}
+            <div className="rounded-2xl bg-surface/60 border border-white/[0.08] overflow-hidden backdrop-blur-md shadow-2xl">
+              {/* Founder Workspace Visual */}
+              <div className="relative w-full h-48 sm:h-56 bg-midnight overflow-hidden border-b border-white/[0.08]">
+                <Image
+                  src="/team/founder-workspace.jpg"
+                  alt="Next Dynamics Engineering Studio Workspace"
+                  fill
+                  className="object-cover object-center filter brightness-90 hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 480px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/30 to-transparent" />
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-midnight/80 border border-white/10 backdrop-blur-sm text-[10px] font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Founders In Sprint · Direct Access</span>
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-paper-muted">
-                <span>Response SLA</span>
-                <span className="text-paper font-semibold">&lt; 24 Business Hours</span>
+              {/* Founder Details & Commitments */}
+              <div className="p-6 space-y-5">
+                <div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-gold-blueprint mb-1.5">
+                    MEET THE PRINCIPALS · ZERO JUNIOR DELEGATION
+                  </div>
+                  <h4 className="text-lg font-medium text-paper">
+                    You build directly with the founders.
+                  </h4>
+                  <p className="text-xs text-paper-muted font-light leading-relaxed mt-1">
+                    Every architectural decision and line of code is executed directly by founding partners. No account manager telephone game, no offshore junior delegates.
+                  </p>
+                </div>
+
+                {/* Team Roster Mini-Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-xs font-semibold text-paper">Shahidul (Shakil)</div>
+                    <div className="text-[11px] font-mono text-electric-cyan">Lead Creative Engineer</div>
+                    <div className="text-[10px] text-paper-muted mt-1">Next.js 15, GSAP & WebGL</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-xs font-semibold text-paper">Founding Partner</div>
+                    <div className="text-[11px] font-mono text-gold-blueprint">Headless Systems Lead</div>
+                    <div className="text-[10px] text-paper-muted mt-1">WPGraphQL, APIs & Cloud VPS</div>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5 pt-2 border-t border-white/[0.06]">
+                  <div className="flex items-start gap-2.5 text-xs text-paper/90">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                    <span>Direct private Slack/Discord channel with senior partners</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-paper/90">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                    <span>14-Day functional staging delivery guarantee</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-paper/90">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                    <span>100% clean repository and infrastructure IP handover</span>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-paper-muted">
+                  <span>Response SLA</span>
+                  <span className="text-paper font-semibold">&lt; 24 Business Hours</span>
+                </div>
               </div>
             </div>
           </div>
