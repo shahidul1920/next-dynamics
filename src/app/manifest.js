@@ -1,0 +1,24 @@
+export default function manifest() {
+  return {
+    name: "Next Dynamics",
+    short_name: "Next Dynamics",
+    description:
+      "Creative frontend engineering and headless web development studio.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#0b1118",
+    theme_color: "#0b1118",
+    icons: [
+      {
+        src: "/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        src: "/icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+  };
+}

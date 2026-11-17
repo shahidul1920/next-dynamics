@@ -29,7 +29,7 @@ const TIERS = [
   {
     tier: "02",
     name: "The Growth Engine",
-    investment: "$1,500 to $3,500",
+    investment: "$800 to $3,500",
     timeline: "2 to 3 weeks",
     featured: true,
     scope:
@@ -38,8 +38,12 @@ const TIERS = [
       "Custom design for Hero and key feature blocks",
       "Headless CMS setup (WPGraphQL or Sanity)",
       "Familiar admin editing workflows",
-      "Standard fluid GSAP scroll animations",
+      "Premium fluid GSAP scroll animations",
       "Technical SEO & analytics tracking (GA4)",
+      "Up to 8 fully responsive website pages",
+      "Reusable design components and responsive layouts",
+      "Core Web Vitals optimization and Lighthouse 95+ targets",
+      "Cross-device QA, accessibility review, and launch support",
     ],
     cta: "Start Project",
   },

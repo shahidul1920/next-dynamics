@@ -44,6 +44,11 @@ export default function StudioFAQ() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://nextdynamics.tech/#faq",
+    url: "https://nextdynamics.tech/#faq",
+    isPartOf: {
+      "@id": "https://nextdynamics.tech/#webpage",
+    },
     mainEntity: FAQS.map((faq) => ({
       "@type": "Question",
       name: faq.question,
