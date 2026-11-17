@@ -67,7 +67,7 @@ export default function Navbar() {
             href="#investment"
             className="hover:text-paper transition-colors duration-200"
           >
-            Investment
+            Packages
           </a>
           <a
             href="#faq"
@@ -129,7 +129,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="block text-paper-muted hover:text-paper"
           >
-            04 / Investment
+            04 / Packages
           </a>
           <a
             href="#faq"

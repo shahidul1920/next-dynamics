@@ -117,7 +117,7 @@ const organizationSchema = {
   image: "https://nextdynamics.tech/logo-01.png",
   description:
     "Creative frontend engineering studio specializing in high-converting SaaS marketing websites, headless WordPress architectures, and luxury brand e-commerce storefronts.",
-  email: "hello@nextdynamics.tech",
+  email: "team@nextdynamics.tech",
   telephone: "+8801879539832",
   priceRange: "$$$",
   areaServed: "Worldwide",
@@ -129,7 +129,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "hello@nextdynamics.tech",
+    email: "team@nextdynamics.tech",
     telephone: "+8801879539832",
     availableLanguage: ["English", "Bengali"],
   },

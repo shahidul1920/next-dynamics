@@ -123,7 +123,7 @@ THE STUDIO STANDARD:
 Engineering digital performance for ambitious founders and scaleups worldwide.
 
 Explore our live production portfolio: https://nextdynamics.tech
-Direct Inquiries: hello@nextdynamics.tech | WhatsApp: +880 1879-539832
+Direct Inquiries: team@nextdynamics.tech | WhatsApp: +880 1879-539832
 ```
 
 ---

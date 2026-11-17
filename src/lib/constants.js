@@ -4,7 +4,7 @@ export const SITE = {
   name: "Next Dynamics",
   domain: "NextDynamics.tech",
   tagline: "Creative Engineering Studio",
-  email: "hello@nextdynamics.tech",
+  email: "team@nextdynamics.tech",
   whatsapp: "+880 1879-539832",
   whatsappUrl: "https://wa.me/8801879539832",
   linkedin: "https://www.linkedin.com/company/nextdynamics-tech/",
